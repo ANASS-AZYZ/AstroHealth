@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: astrohealth-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    numInstances: 1
+    healthCheckPath: /api/healthcheck
+    envVars:
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: APP_ENV
+        value: production
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
+      - key: SESSION_COOKIE_SAMESITE
+        value: "none"
+      - key: SESSION_TTL_SECONDS
+        value: "3600"
+      - key: SESSION_MAX_ACTIVE
+        value: "1000"
+      - key: SESSION_EVICTION_ENABLED
+        value: "true"
+      - key: RATE_LIMIT_SESSION_PER_MINUTE
+        value: "30"
+      - key: RATE_LIMIT_MUTATION_PER_MINUTE
+        value: "120"
+      - key: RATE_LIMIT_REPORT_PER_MINUTE
+        value: "10"
+      - key: RATE_LIMIT_COMPARISON_PER_MINUTE
+        value: "20"
