@@ -141,3 +141,4 @@ export const startDemo = async () => (await api.post("/api/demo/start")).data;
 export const advanceDemo = async (steps = 1) => (await api.post("/api/demo/advance", { steps })).data;
 export const resetDemo = async () => (await api.post("/api/demo/reset")).data;
 export const exitDemo = async () => (await api.post("/api/demo/exit")).data;
+export const getNASAEvidence = async () => (await api.get("/api/nasa/evidence")).data;

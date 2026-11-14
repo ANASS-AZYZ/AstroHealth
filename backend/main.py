@@ -10,6 +10,7 @@ from routers.reports import router as reports_router
 from routers.exports import router as exports_router
 from routers.command import router as command_router
 from routers.demo import router as demo_router
+from routers.nasa import router as nasa_router
 from services.session_service import AppSession, create_session, get_session
 from services.config import load_config
 
@@ -37,6 +38,7 @@ app.include_router(reports_router)
 app.include_router(exports_router)
 app.include_router(command_router)
 app.include_router(demo_router)
+app.include_router(nasa_router)
 
 @app.get("/")
 def home():

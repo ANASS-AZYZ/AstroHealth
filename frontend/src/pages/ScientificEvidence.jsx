@@ -1,5 +1,7 @@
 import { ExternalLink, ShieldCheck } from "lucide-react";
+import { useEffect, useState } from "react";
 import PageFrame from "./PageFrame";
+import { getNASAEvidence } from "../services/api";
 
 const references = [
   { topic: "Long-duration mission monitoring", title: "Human Research Roadmap", author: "NASA Human Research Program", year: "current web resource", url: "https://humanresearchroadmap.nasa.gov/", relevance: "NASA describes crew health and performance risks beyond low Earth orbit, including radiation, altered gravity, hostile environments, human factors, and behavioral health." },
@@ -8,10 +10,52 @@ const references = [
 ];
 
 function ScientificEvidence() {
+  const [nasaEvidence, setNASAEvidence] = useState(null);
+  const [nasaError, setNASAError] = useState("");
+
+  useEffect(() => {
+    let active = true;
+    getNASAEvidence()
+      .then((data) => {
+        if (active) setNASAEvidence(data);
+      })
+      .catch(() => {
+        if (active) setNASAError("NASA evidence is temporarily unavailable.");
+      });
+    return () => { active = false; };
+  }, []);
+
   return <PageFrame title="Scientific evidence" section="RESEARCH CONTEXT">
     <section className="info-hero"><p className="eyebrow">SCIENCE VS SIMULATION</p><h2>Why monitor crew health during long-duration missions?</h2><p>AstroHealth uses NASA research topics as motivation for an educational interface. The application does not reproduce NASA models or use astronaut data.</p></section>
     <section className="evidence-grid">{["Space radiation", "Isolation and confinement", "Altered gravity", "Sleep and circadian disruption", "Behavioral health", "Human performance", "Long-duration monitoring"].map((topic) => <article className="evidence-topic" key={topic}><ShieldCheck size={17} /><h3>{topic}</h3><p>Relevant research motivates continuous observation, transparent assumptions, and crew-centered decision support.</p></article>)}</section>
     <section className="reference-list"><div className="section-heading"><div><p className="eyebrow">VERIFIED REFERENCES</p><h2>Authoritative starting points</h2></div></div>{references.map((reference) => <article className="reference-card" key={reference.url}><div><p className="eyebrow">{reference.topic}</p><h3>{reference.title}</h3><p className="muted">{reference.author} · {reference.year}</p><p>{reference.relevance}</p></div><a href={reference.url} target="_blank" rel="noreferrer"><ExternalLink size={15} /> Source</a></article>)}</section>
+    <section className="nasa-evidence-card">
+      <div className="section-heading">
+        <div><p className="eyebrow">NASA OPEN SCIENCE DATA REPOSITORY</p><h2>Verified research evidence</h2></div>
+        <span className="data-badge">NASA METADATA</span>
+      </div>
+      {nasaError && <p className="notice">{nasaError}</p>}
+      {!nasaEvidence && !nasaError && <p className="muted">Loading verified NASA study metadata...</p>}
+      {nasaEvidence && [nasaEvidence.study, ...(nasaEvidence.additional_studies || [])].map((study) => <article key={study.accession}>
+        <p className="eyebrow">{study.accession} · {study.study_identifier}</p>
+        <h3>{study.title}</h3>
+        <p><strong>Research scope:</strong> {study.study_scope}</p>
+        <p>{study.biological_context}</p>
+        <p>{study.mission_context}</p>
+        <p><strong>Relevance to spaceflight health:</strong> {study.relevance}</p>
+        <div className="nasa-evidence-links">
+          <a href={study.study_url} target="_blank" rel="noreferrer"><ExternalLink size={14} /> Study page</a>
+          <a href={study.metadata_url} target="_blank" rel="noreferrer"><ExternalLink size={14} /> Metadata ZIP</a>
+          <a href={study.data_listing_url} target="_blank" rel="noreferrer"><ExternalLink size={14} /> Public files</a>
+        </div>
+        <div className="nasa-evidence-columns">
+          <div><h4>Study context</h4><ul>{study.sample_context.map((item) => <li key={item}>{item}</li>)}</ul></div>
+          <div><h4>Available measurements</h4><ul>{study.available_measurements.map((item) => <li key={item}>{item}</li>)}</ul></div>
+        </div>
+        <p className="nasa-evidence-note"><strong>Research versus simulation:</strong> {nasaEvidence.distinction}</p>
+        <p className="muted">{study.availability_note} Retrieved {study.retrieved_at}. {study.license_note}</p>
+      </article>)}
+    </section>
     <section className="transparency-grid"><article className="command-card"><h3>Scientifically supported concepts</h3><p>Spaceflight beyond low Earth orbit presents environmental, physiological, behavioral, and performance challenges that motivate research and monitoring.</p></article><article className="command-card"><h3>Illustrative simulation assumptions</h3><p>AstroHealth uses bounded seeded effects between workload, fatigue, stress, sleep, radiation-rate indicators, and alerts for demonstration.</p></article><article className="command-card"><h3>Experimental software features</h3><p>Forecasts, anomaly detection, readiness scores, and response effects are prototype analytics, not validated medical or operational models.</p></article></section>
   </PageFrame>;
 }
