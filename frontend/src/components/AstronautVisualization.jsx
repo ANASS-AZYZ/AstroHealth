@@ -1,5 +1,6 @@
 import { Component, Suspense, useMemo, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
+import { useTheme } from "../context/useTheme";
 import { Bounds, Html, OrbitControls, useGLTF, useProgress } from "@react-three/drei";
 import { RotateCcw } from "lucide-react";
 import * as THREE from "three";
@@ -77,6 +78,7 @@ class ModelErrorBoundary extends Component {
 }
 
 function AstronautVisualization({ onSelect, selectedMetric }) {
+  const { resolvedTheme } = useTheme();
   const controls = useRef(null);
   const [webglError, setWebglError] = useState(false);
 
@@ -106,7 +108,7 @@ function AstronautVisualization({ onSelect, selectedMetric }) {
                 if (!gl.getContext()) setWebglError(true);
               }}
             >
-              <color attach="background" args={["#070e1b"]} />
+              <color attach="background" args={[resolvedTheme === "light" ? "#dbeafe" : "#070e1b"]} />
               <ambientLight intensity={1.2} />
               <directionalLight position={[3, 5, 4]} intensity={3} castShadow />
               <directionalLight position={[-3, 2, 2]} intensity={1.5} color="#6bdcff" />

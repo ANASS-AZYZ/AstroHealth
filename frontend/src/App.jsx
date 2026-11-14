@@ -35,8 +35,6 @@ function MissionOverview() {
     <PageFrame title="Health telemetry" section="OVERVIEW" error={telemetry.error}>
       <section className="info-hero">
         <p className="eyebrow">TEAM EAGLES · ASTROHEALTH</p>
-        <h2>Mission-health intelligence for long-duration exploration</h2>
-        <p>Explore simulated telemetry, deterministic mission scenarios, explainable alerts, analytics, a 3D Digital Twin, and an interactive Command Center.</p>
         <div className="controls">
           <button onClick={() => navigate("/guided-demo")}><CirclePlay size={16} /> Start Guided Demo</button>
           <button className="secondary" onClick={() => navigate("/scientific-evidence")}><ShieldCheck size={16} /> Scientific limitations</button>
