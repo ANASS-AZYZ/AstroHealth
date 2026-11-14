@@ -1,5 +1,5 @@
 
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 
 from routers.digital_twin import router as digital_twin_router
@@ -10,7 +10,7 @@ from routers.reports import router as reports_router
 from routers.exports import router as exports_router
 from routers.command import router as command_router
 from routers.demo import router as demo_router
-from services.session_service import AppSession, get_session
+from services.session_service import AppSession, create_session, get_session
 from services.config import load_config
 
 runtime_config = load_config()
@@ -25,6 +25,7 @@ app.add_middleware(
     allow_origins=list(runtime_config.allowed_origins),
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["X-AstroHealth-Session-Expired"],
     allow_credentials=True,
 )
 
@@ -53,6 +54,11 @@ def healthz():
 @app.get("/api/healthcheck")
 def api_healthcheck():
     return {"status": "ok", "service": "astrohealth-api"}
+
+
+@app.get("/api/session")
+def session(request: Request, response: Response, renew: bool = False):
+    return create_session(request, response, renew=renew)
 
 @app.get("/api/astronaut")
 def astronaut():

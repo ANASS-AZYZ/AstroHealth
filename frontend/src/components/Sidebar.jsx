@@ -20,7 +20,9 @@ function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="brand">
-        <div className="brand-mark">AH</div>
+        <div className="brand-mark">
+          <img src="/images/astrohealth-logo.png" alt="AstroHealth logo" />
+        </div>
         <div><strong>ASTRO<span>HEALTH</span></strong><small>MISSION CONTROL</small></div>
       </div>
       <nav>

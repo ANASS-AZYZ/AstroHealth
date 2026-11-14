@@ -1,5 +1,5 @@
-import { Activity, CirclePause, CirclePlay, Clock3, ExternalLink, GitBranch, HeartPulse, Moon, Radio, RefreshCw, ShieldCheck } from "lucide-react";
-import { lazy, Suspense } from "react";
+import { Activity, CirclePause, CirclePlay, Clock3, HeartPulse, Moon, Radio, RefreshCw, ShieldCheck } from "lucide-react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { HealthCharts } from "./components/HealthCharts";
 import { useTelemetry } from "./hooks/useTelemetry";
@@ -10,6 +10,7 @@ const DigitalTwin = lazy(() => import("./pages/DigitalTwin"));
 const HealthAnalytics = lazy(() => import("./pages/HealthAnalytics"));
 import PageFrame from "./pages/PageFrame";
 import RiskAlerts from "./pages/RiskAlerts";
+import { initializeSession } from "./services/api";
 const MissionIntelligence = lazy(() => import("./pages/MissionIntelligence"));
 const MissionCommand = lazy(() => import("./pages/MissionCommand"));
 const GuidedDemo = lazy(() => import("./pages/GuidedDemo"));
@@ -39,14 +40,16 @@ function MissionOverview() {
         <div className="controls">
           <button onClick={() => navigate("/guided-demo")}><CirclePlay size={16} /> Start Guided Demo</button>
           <button className="secondary" onClick={() => navigate("/scientific-evidence")}><ShieldCheck size={16} /> Scientific limitations</button>
-          <a className="demo-link" href="https://github.com/ANASS-AZYZ/AstroHealth" target="_blank" rel="noreferrer"><GitBranch size={15} /> GitHub <ExternalLink size={14} /></a>
         </div>
       </section>
       <section className="mission-banner"><div><p className="eyebrow">ACTIVE MISSION</p><h2>{telemetry.astronaut?.mission || "Mars Exploration"}</h2><p className="muted">{telemetry.astronaut?.name || "Alex Morgan"} · Flight specialist · Day 184</p></div><div className="mission-status"><span className={`status-pulse ${telemetry.error ? "status-offline" : ""}`} /> {telemetry.error ? "DISCONNECTED" : "SIMULATED TELEMETRY"}</div></section>
       <div className="section-heading"><div><p className="eyebrow">CURRENT READINGS</p><h2>Physiological indicators</h2></div><p className="updated"><Clock3 size={14} /> Updated {telemetry.health?.timestamp ? new Date(telemetry.health.timestamp).toLocaleTimeString() : "--"}</p></div>
       <section className="metrics-grid">{metrics.map((metric) => <MetricCard key={metric.label} {...metric} />)}</section>
       <div className="section-heading charts-heading"><div><p className="eyebrow">LIVE STREAM</p><h2>Telemetry trends</h2></div><div className="controls"><button onClick={() => telemetry.setIsRunning((running) => !running)}>{telemetry.isRunning ? <CirclePause size={16} /> : <CirclePlay size={16} />}{telemetry.isRunning ? "Pause" : "Resume"}</button><button onClick={telemetry.reset} className="secondary"><RefreshCw size={15} /> Reset</button></div></div>
-      <HealthCharts data={telemetry.chartData} />
+      <HealthCharts
+        data={telemetry.chartData}
+        emptyMessage={telemetry.error || "Simulation not started. Start the Mission Simulator to generate telemetry."}
+      />
       <footer className="disclaimer"><ShieldCheck size={16} /><span>Demonstration only. Measurements are simulated and are not clinical readings or medical advice.</span></footer>
     </PageFrame>
   );
@@ -61,6 +64,16 @@ function RouteLoading() {
 }
 
 function App() {
+  const [sessionState, setSessionState] = useState("connecting");
+
+  useEffect(() => {
+    initializeSession()
+      .then(() => setSessionState("ready"))
+      .catch(() => setSessionState("error"));
+  }, []);
+
+  if (sessionState === "connecting") return <main className="loading-screen"><p>Connecting to the AstroHealth API...</p></main>;
+  if (sessionState === "error") return <main className="loading-screen"><p>Unable to establish an AstroHealth session.</p><button onClick={() => { setSessionState("connecting"); initializeSession().then(() => setSessionState("ready")).catch(() => setSessionState("error")); }}>Retry connection</button></main>;
   return (
     <Suspense fallback={<RouteLoading />}><Routes>
       <Route path="/" element={<MissionOverview />} />

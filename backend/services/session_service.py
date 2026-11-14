@@ -101,7 +101,13 @@ session_manager = SessionManager()
 
 def get_session(request: Request, response: Response) -> AppSession:
     incoming_id = request.cookies.get(SESSION_COOKIE)
-    if not session_manager.is_active(incoming_id):
+    if incoming_id and not session_manager.is_active(incoming_id):
+        raise HTTPException(
+            status_code=401,
+            detail="Session expired. Establish a new AstroHealth session.",
+            headers={"X-AstroHealth-Session-Expired": "true"},
+        )
+    if not incoming_id:
         enforce_session_creation(request)
     try:
         session_id, session, is_new = session_manager.get(incoming_id)
@@ -117,3 +123,20 @@ def get_session(request: Request, response: Response) -> AppSession:
             max_age=session_manager._ttl_seconds,
         )
     return session
+
+
+def create_session(request: Request, response: Response, renew: bool = False) -> dict[str, str]:
+    incoming_id = request.cookies.get(SESSION_COOKIE)
+    if not renew and incoming_id and session_manager.is_active(incoming_id):
+        return {"status": "ready"}
+    enforce_session_creation(request)
+    session_id, _, _ = session_manager.get(None)
+    response.set_cookie(
+        SESSION_COOKIE,
+        session_id,
+        httponly=True,
+        secure=os.getenv("SESSION_COOKIE_SECURE", "false").lower() == "true",
+        samesite=os.getenv("SESSION_COOKIE_SAMESITE", "lax"),
+        max_age=session_manager._ttl_seconds,
+    )
+    return {"status": "ready"}

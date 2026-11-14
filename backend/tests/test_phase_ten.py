@@ -1,15 +1,39 @@
 import unittest
 
 from fastapi import HTTPException
+from fastapi.testclient import TestClient
 from starlette.requests import Request
 
-from main import get_health_history, get_live_health
+from main import app, get_health_history, get_live_health
+from routers.mission import get_phases, get_scenarios
 from services.config import RuntimeConfig, validate_config
 from services.rate_limit_service import ProcessRateLimiter, RateLimitExceeded, enforce_mutation
-from services.session_service import SessionManager
+from services.session_service import SessionManager, session_manager
 
 
 class PhaseTenTests(unittest.TestCase):
+    def test_session_bootstrap_recovers_after_backend_session_loss(self):
+        with TestClient(app) as client:
+            bootstrap = client.get("/api/session")
+            self.assertEqual(bootstrap.status_code, 200)
+            self.assertEqual(bootstrap.json()["status"], "ready")
+            original_cookie = client.cookies.get("astrohealth_session")
+            self.assertEqual(client.get("/api/session").status_code, 200)
+            self.assertEqual(client.cookies.get("astrohealth_session"), original_cookie)
+
+            session_manager._sessions.clear()
+            expired = client.get("/api/health/history")
+            self.assertEqual(expired.status_code, 401)
+            self.assertEqual(expired.headers["X-AstroHealth-Session-Expired"], "true")
+
+            renewed = client.get("/api/session")
+            self.assertEqual(renewed.status_code, 200)
+            self.assertEqual(client.get("/api/health/history").json(), [])
+
+    def test_mission_metadata_endpoints_return_available_options(self):
+        self.assertTrue(get_scenarios())
+        self.assertTrue(get_phases())
+
     def test_legacy_health_endpoints_use_simulator_history(self):
         _, session, _ = SessionManager().get(None)
         session.simulator.start()

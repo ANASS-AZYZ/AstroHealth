@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends
 from models.mission import AdvanceRequest, PhaseRequest, ScenarioRequest, SpeedRequest
 from services.session_service import AppSession, get_session
 from services.rate_limit_service import enforce_mutation
+from services.mission_simulator import mission_simulator
 
 
 router = APIRouter(prefix="/api/mission", tags=["mission"])

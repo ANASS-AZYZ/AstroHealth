@@ -1,9 +1,50 @@
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000",
+  baseURL: API_BASE_URL,
   timeout: 10000,
   withCredentials: true,
+});
+
+let sessionBootstrap;
+let sessionRenewal;
+
+const requestSession = (renew = false) => axios.get(`${API_BASE_URL}/api/session`, {
+  params: renew ? { renew: true } : undefined,
+  timeout: 10000,
+  withCredentials: true,
+});
+
+export const initializeSession = () => {
+  if (!sessionBootstrap) {
+    sessionBootstrap = requestSession().catch((error) => {
+      sessionBootstrap = undefined;
+      throw error;
+    });
+  }
+  return sessionBootstrap;
+};
+
+const renewSession = () => {
+  if (!sessionRenewal) {
+    sessionRenewal = requestSession(true).finally(() => {
+      sessionRenewal = undefined;
+      sessionBootstrap = undefined;
+    });
+  }
+  return sessionRenewal;
+};
+
+api.interceptors.response.use(undefined, async (error) => {
+  const request = error.config;
+  const expired = error.response?.status === 401
+    && error.response.headers["x-astrohealth-session-expired"] === "true";
+  if (!expired || !request || request.sessionRetry) throw error;
+  request.sessionRetry = true;
+  await renewSession();
+  return api.request(request);
 });
 
 export const getHealth = async () => {

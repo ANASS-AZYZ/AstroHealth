@@ -4,12 +4,12 @@ import {
 } from "recharts";
 import { chartDefinitions } from "../utils/telemetry";
 
-export function HealthChart({ definition, data }) {
+export function HealthChart({ definition, data, emptyMessage }) {
   const Chart = definition.type === "area" ? AreaChart : LineChart;
   return (
     <article className="chart-card">
       <div className="chart-heading"><div><p className="eyebrow">{definition.label}</p><p className="chart-unit">{definition.unit}</p></div><span className="chart-dot" style={{ backgroundColor: definition.color }} /></div>
-      {data.length === 0 ? <div className="chart-empty">Waiting for the first measurement...</div> : (
+      {data.length === 0 ? <div className="chart-empty">{emptyMessage}</div> : (
         <ResponsiveContainer width="100%" height={190}>
           <Chart data={data}>
             <defs><linearGradient id={`fill-${definition.key}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={definition.color} stopOpacity={0.3} /><stop offset="100%" stopColor={definition.color} stopOpacity={0} /></linearGradient></defs>
@@ -27,6 +27,6 @@ export function HealthChart({ definition, data }) {
   );
 }
 
-export function HealthCharts({ data }) {
-  return <section className="charts-grid">{chartDefinitions.map((definition) => <HealthChart key={definition.key} definition={definition} data={data} />)}</section>;
+export function HealthCharts({ data, emptyMessage = "Waiting for the first measurement..." }) {
+  return <section className="charts-grid">{chartDefinitions.map((definition) => <HealthChart key={definition.key} definition={definition} data={data} emptyMessage={emptyMessage} />)}</section>;
 }
