@@ -67,7 +67,7 @@ function HealthAnalytics() {
       setInsights(nextInsights);
       setError("");
     } catch {
-      setError("Analytics API is unavailable. Start the FastAPI backend to view simulated trends.");
+      setError("Analytics API is unavailable. Retry to view simulated trends.");
     }
   }, []);
 

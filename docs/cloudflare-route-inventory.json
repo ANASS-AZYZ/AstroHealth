@@ -1,0 +1,359 @@
+[
+  {
+    "path": "/api/mission/state",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_mission_state_api_mission_state_get"
+  },
+  {
+    "path": "/api/mission/start",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "start_mission_api_mission_start_post"
+  },
+  {
+    "path": "/api/mission/pause",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "pause_mission_api_mission_pause_post"
+  },
+  {
+    "path": "/api/mission/resume",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "resume_mission_api_mission_resume_post"
+  },
+  {
+    "path": "/api/mission/reset",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "reset_mission_api_mission_reset_post"
+  },
+  {
+    "path": "/api/mission/scenario",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "select_scenario_api_mission_scenario_post"
+  },
+  {
+    "path": "/api/mission/phase",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "select_phase_api_mission_phase_post"
+  },
+  {
+    "path": "/api/mission/speed",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "select_speed_api_mission_speed_post"
+  },
+  {
+    "path": "/api/mission/advance",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "advance_mission_api_mission_advance_post"
+  },
+  {
+    "path": "/api/mission/history",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_mission_history_api_mission_history_get"
+  },
+  {
+    "path": "/api/mission/scenarios",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_scenarios_api_mission_scenarios_get"
+  },
+  {
+    "path": "/api/mission/phases",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_phases_api_mission_phases_get"
+  },
+  {
+    "path": "/api/digital-twin",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_digital_twin_api_digital_twin_get"
+  },
+  {
+    "path": "/api/analytics/summary",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_analytics_summary_api_analytics_summary_get"
+  },
+  {
+    "path": "/api/analytics/predictions",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_predictions_api_analytics_predictions_get"
+  },
+  {
+    "path": "/api/analytics/anomalies",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_anomalies_api_analytics_anomalies_get"
+  },
+  {
+    "path": "/api/alerts",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_alerts_api_alerts_get"
+  },
+  {
+    "path": "/api/alerts/{alert_id}/acknowledge",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "acknowledge_alert_api_alerts__alert_id__acknowledge_post"
+  },
+  {
+    "path": "/api/insights",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_insights_api_insights_get"
+  },
+  {
+    "path": "/api/analytics/insights",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_analytics_insights_api_analytics_insights_get"
+  },
+  {
+    "path": "/api/mission/events",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_mission_events_api_mission_events_get"
+  },
+  {
+    "path": "/api/mission/readiness",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_readiness_api_mission_readiness_get"
+  },
+  {
+    "path": "/api/mission/compare",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "compare_mission_scenarios_api_mission_compare_post"
+  },
+  {
+    "path": "/api/reports/mission-health",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "mission_health_report_api_reports_mission_health_get"
+  },
+  {
+    "path": "/api/export/telemetry.csv",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "export_telemetry_csv_api_export_telemetry_csv_get"
+  },
+  {
+    "path": "/api/export/telemetry.json",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "export_telemetry_json_api_export_telemetry_json_get"
+  },
+  {
+    "path": "/api/export/events.json",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "export_events_json_api_export_events_json_get"
+  },
+  {
+    "path": "/api/command/state",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_command_state_api_command_state_get"
+  },
+  {
+    "path": "/api/command/scenarios",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_command_scenarios_api_command_scenarios_get"
+  },
+  {
+    "path": "/api/command/activate",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "activate_command_scenario_api_command_activate_post"
+  },
+  {
+    "path": "/api/command/actions",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_command_actions_api_command_actions_get"
+  },
+  {
+    "path": "/api/command/respond",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "respond_to_scenario_api_command_respond_post"
+  },
+  {
+    "path": "/api/command/events",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_command_events_api_command_events_get"
+  },
+  {
+    "path": "/api/command/reset",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "reset_command_api_command_reset_post"
+  },
+  {
+    "path": "/api/command/messages",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_command_messages_api_command_messages_get"
+  },
+  {
+    "path": "/api/command/messages",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "send_command_message_api_command_messages_post"
+  },
+  {
+    "path": "/api/command/after-action.json",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_after_action_json_api_command_after_action_json_get"
+  },
+  {
+    "path": "/api/command/after-action.pdf",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_after_action_pdf_api_command_after_action_pdf_get"
+  },
+  {
+    "path": "/api/demo/status",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_demo_status_api_demo_status_get"
+  },
+  {
+    "path": "/api/demo/state",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_demo_state_api_demo_state_get"
+  },
+  {
+    "path": "/api/demo/start",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "start_demo_api_demo_start_post"
+  },
+  {
+    "path": "/api/demo/advance",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "advance_demo_api_demo_advance_post"
+  },
+  {
+    "path": "/api/demo/reset",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "reset_demo_api_demo_reset_post"
+  },
+  {
+    "path": "/api/demo/exit",
+    "methods": [
+      "POST"
+    ],
+    "endpoint": "exit_demo_api_demo_exit_post"
+  },
+  {
+    "path": "/api/nasa/evidence",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "nasa_evidence_api_nasa_evidence_get"
+  },
+  {
+    "path": "/api/healthcheck",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "api_healthcheck_api_healthcheck_get"
+  },
+  {
+    "path": "/api/session",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "session_api_session_get"
+  },
+  {
+    "path": "/api/astronaut",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "astronaut_api_astronaut_get"
+  },
+  {
+    "path": "/api/health",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "health_api_health_get"
+  },
+  {
+    "path": "/api/health/live",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_live_health_api_health_live_get"
+  },
+  {
+    "path": "/api/health/history",
+    "methods": [
+      "GET"
+    ],
+    "endpoint": "get_health_history_api_health_history_get"
+  }
+]

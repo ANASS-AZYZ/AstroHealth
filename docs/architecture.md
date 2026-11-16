@@ -1,5 +1,7 @@
 # Architecture
 
+The prepared production replacement uses React/Vite → same-origin Cloudflare Pages Functions → durable D1 session state. See [the migration report](cloudflare-migration-report.md). The following architecture describes the retained Python reference backend.
+
 AstroHealth uses a React/Vite frontend and FastAPI backend.
 
 ```text

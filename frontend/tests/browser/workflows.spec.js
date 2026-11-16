@@ -1,0 +1,50 @@
+import { test, expect } from '@playwright/test';
+
+test('guided demo, alert review, command response, analytics, comparisons and reports',async({page})=>{
+  const failures=[];
+  page.on('pageerror',e=>failures.push(e.message));
+  page.on('request',r=>expect(r.url()).not.toContain('run.app'));
+  await page.goto('/guided-demo');
+  await page.getByRole('button',{name:'Start Demo',exact:true}).click();
+  await expect(page.getByText('Step 1 of 8')).toBeVisible();
+  await page.getByRole('button',{name:'Next Step'}).click();
+  await expect(page.getByText('Step 2 of 8')).toBeVisible();
+  await page.goto('/risk-alerts');
+  await page.getByRole('button',{name:'Acknowledge'}).first().click();
+  await expect(page.getByText('No active alerts',{exact:true})).toBeVisible();
+  await page.goto('/mission-command');
+  await page.getByRole('button',{name:'Reduce Activity',exact:false}).click();
+  await expect(page.locator('.comparison-row').first()).toBeVisible();
+  await page.locator('.message-compose input').fill('Demonstration check');
+  await page.getByRole('button',{name:'Queue message'}).click();
+  await expect(page.locator('.messages')).toContainText('Demonstration check');
+  await page.goto('/health-analytics');
+  await expect(page.locator('.analytics-quality')).toContainText('observations');
+  await expect(page.locator('.analytics-prediction-card')).toHaveCount(5);
+  await page.goto('/mission-intelligence');
+  await page.getByRole('button',{name:'Compare',exact:true}).click();
+  await expect(page.locator('.comparison-row')).toHaveCount(7);
+  const download=page.waitForEvent('download');
+  await page.getByRole('link',{name:'Download health report PDF'}).click();
+  expect((await download).suggestedFilename()).toBe('astrohealth-mission-health-report.pdf');
+  await page.goto('/scientific-evidence');
+  await expect(page.locator('.nasa-evidence-card')).toContainText('OSD-379');
+  await page.goto('/guided-demo');await page.getByRole('button',{name:'Exit Demo',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Start Demo',exact:true})).toBeVisible();
+  expect(failures).toEqual([]);
+});
+
+test('simulator controls and shared health state across pages',async({page})=>{
+  await page.goto('/mission-simulator');
+  await expect(page.locator('.sim-status')).toContainText('RUNNING');
+  await page.getByRole('button',{name:'Pause',exact:true}).click();
+  await expect(page.locator('.sim-status')).toContainText('PAUSED');
+  await page.getByRole('button',{name:'Reset',exact:true}).click();
+  await expect(page.locator('.sim-status')).toContainText('IDLE');
+  await page.locator('.sim-control-panel select').first().selectOption('sleep_disruption');
+  await page.getByRole('button',{name:'Start',exact:true}).click();
+  await expect.poll(async()=>page.locator('.updated').textContent()).not.toContain('0 observations');
+  await page.getByRole('button',{name:'Pause',exact:true}).click();
+  await page.goto('/astronaut-health');await expect(page.locator('.metric-value').first()).not.toHaveText('-- BPM');
+  await page.goto('/live-monitoring');await expect(page.locator('.mission-status')).toContainText('STREAMING SIMULATED DATA');
+});

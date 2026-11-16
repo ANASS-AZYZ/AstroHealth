@@ -1,0 +1,26 @@
+
+{
+  "name": "astrohealth-eagles",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-11-16",
+  "d1_databases": [
+    {
+      "binding": "ASTROHEALTH_DB",
+      "database_name": "astrohealth-sessions",
+      "database_id": "5e36d3fb-b1e2-4af7-962d-08f4d32a1c04",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "env": {
+    "preview": {
+      "d1_databases": [
+        {
+          "binding": "ASTROHEALTH_DB",
+          "database_name": "astrohealth-sessions-preview",
+          "database_id": "016b60e3-4cba-4142-bfb3-493c1b6376d1",
+          "migrations_dir": "migrations"
+        }
+      ]
+    }
+  }
+}

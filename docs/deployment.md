@@ -1,5 +1,7 @@
 # Deployment preparation
 
+**Current migration:** see [Cloudflare migration report](cloudflare-migration-report.md) for the Pages Functions + D1 replacement, preserving the existing Pages URL. The instructions below describe the earlier Python hosting approach and are retained as reference.
+
 The simplest deployment shape is a static Vite frontend on Vercel, Netlify, or Cloudflare Pages plus one FastAPI service on a compatible Python host such as Render, Railway, or Cloud Run. Provider pricing and free-tier limits change; verify current terms before choosing a provider.
 
 ## Backend

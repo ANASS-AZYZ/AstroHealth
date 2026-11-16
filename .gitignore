@@ -15,3 +15,11 @@
 
 # IDE
 .vscode/
+
+# Local Cloudflare state and credentials
+**/.wrangler/
+**/.dev.vars
+**/.dev.vars.*
+**/.npm-cache/
+**/test-results/
+**/playwright-report/

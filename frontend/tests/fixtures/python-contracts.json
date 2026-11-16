@@ -1,0 +1,2458 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/mission/state",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "status": "running",
+      "phase": "pre_launch",
+      "scenario": "nominal",
+      "speed": 1,
+      "seed": 2026,
+      "tick": 0,
+      "elapsed_hours": 0.0,
+      "mission_day": 0.0,
+      "active_stressors": [
+        "Nominal habitat operations",
+        "Routine monitoring"
+      ],
+      "environmental_conditions": [
+        "Baseline preparation and systems checkout",
+        ""
+      ],
+      "health": {
+        "heart_rate": 72.0,
+        "oxygen_saturation": 98.0,
+        "sleep_hours": 7.5,
+        "stress_index": 20.0,
+        "fatigue_index": 18.0,
+        "workload_index": 25.0,
+        "radiation_dose_rate": 0.12,
+        "timestamp": "2026-11-16T00:51:59.089552+00:00",
+        "data_type": "simulated"
+      },
+      "alerts": [],
+      "last_updated": "2026-11-16T00:51:59.089552+00:00"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/mission/history",
+    "body": null,
+    "status": 200,
+    "payload": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/mission/scenarios",
+    "body": null,
+    "status": 200,
+    "payload": [
+      {
+        "id": "nominal",
+        "name": "Nominal Mission",
+        "description": "Stable illustrative mission conditions with ordinary fluctuations.",
+        "active_phases": [
+          "pre_launch",
+          "deep_space_transit",
+          "mars_surface",
+          "return_transit"
+        ],
+        "environmental_conditions": [
+          "Nominal habitat operations",
+          "Routine monitoring"
+        ],
+        "expected_effects": [
+          "Small bounded variation around baseline measurements."
+        ],
+        "assumptions": [
+          "This is not a physiological prediction.",
+          "Values are generated for demonstration only."
+        ]
+      },
+      {
+        "id": "sleep_disruption",
+        "name": "Sleep Disruption",
+        "description": "Illustrates reduced sleep opportunity and associated fatigue trends.",
+        "active_phases": [
+          "deep_space_transit",
+          "return_transit"
+        ],
+        "environmental_conditions": [
+          "Disrupted sleep schedule",
+          "Limited recovery time"
+        ],
+        "expected_effects": [
+          "Sleep duration trends lower.",
+          "Stress and fatigue indices trend higher."
+        ],
+        "assumptions": [
+          "Sleep effects are simplified and not clinically calibrated."
+        ]
+      },
+      {
+        "id": "elevated_workload",
+        "name": "Elevated Workload",
+        "description": "Illustrates a period of increased physical task demand.",
+        "active_phases": [
+          "launch",
+          "mars_arrival",
+          "mars_surface"
+        ],
+        "environmental_conditions": [
+          "High task workload",
+          "Reduced rest between activities"
+        ],
+        "expected_effects": [
+          "Heart rate and workload indices rise temporarily."
+        ],
+        "assumptions": [
+          "The model does not infer injury or medical risk."
+        ]
+      },
+      {
+        "id": "isolation_stress",
+        "name": "Isolation Stress",
+        "description": "Illustrates gradually increasing stress during extended isolation.",
+        "active_phases": [
+          "deep_space_transit",
+          "return_transit"
+        ],
+        "environmental_conditions": [
+          "Communication delay",
+          "Limited social contact"
+        ],
+        "expected_effects": [
+          "Stress index increases gradually over simulation ticks."
+        ],
+        "assumptions": [
+          "The stress index is dimensionless and illustrative."
+        ]
+      },
+      {
+        "id": "elevated_radiation",
+        "name": "Elevated Radiation Environment",
+        "description": "Illustrates a hypothetical increase in environmental dose rate.",
+        "active_phases": [
+          "deep_space_transit",
+          "mars_arrival"
+        ],
+        "environmental_conditions": [
+          "Hypothetical elevated dose rate",
+          "Additional shielding monitoring"
+        ],
+        "expected_effects": [
+          "Environmental dose-rate indicator rises.",
+          "An environmental warning may appear."
+        ],
+        "assumptions": [
+          "Dose rate is an illustrative index in mSv/day, not NASA mission data.",
+          "No direct symptom is inferred."
+        ]
+      },
+      {
+        "id": "eva_activity",
+        "name": "EVA Activity",
+        "description": "Illustrates extravehicular workload followed by recovery.",
+        "active_phases": [
+          "mars_surface"
+        ],
+        "environmental_conditions": [
+          "EVA task",
+          "Suit and habitat operations"
+        ],
+        "expected_effects": [
+          "Workload and heart rate rise during the activity."
+        ],
+        "assumptions": [
+          "The activity response is a simple demonstration model."
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/mission/phases",
+    "body": null,
+    "status": 200,
+    "payload": [
+      {
+        "id": "pre_launch",
+        "name": "Pre-Launch",
+        "description": "Baseline preparation and systems checkout."
+      },
+      {
+        "id": "launch",
+        "name": "Launch",
+        "description": "Illustrative elevated workload during ascent."
+      },
+      {
+        "id": "deep_space_transit",
+        "name": "Deep Space Transit",
+        "description": "Extended transit, isolation, and microgravity assumptions."
+      },
+      {
+        "id": "mars_arrival",
+        "name": "Mars Arrival",
+        "description": "Transition and adaptation activities near Mars."
+      },
+      {
+        "id": "mars_surface",
+        "name": "Mars Surface Operations",
+        "description": "Habitat operations and illustrative EVA workload."
+      },
+      {
+        "id": "return_transit",
+        "name": "Return Transit",
+        "description": "Long-duration return journey."
+      },
+      {
+        "id": "earth_return",
+        "name": "Earth Return",
+        "description": "Readaptation and post-mission observation."
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/digital-twin",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "astronaut": {
+        "id": 1,
+        "name": "Alex Morgan",
+        "mission_role": "Flight specialist",
+        "mission": "Mars Exploration"
+      },
+      "status": "nominal",
+      "status_explanation": "All illustrative indicators are within configured demonstration ranges.",
+      "mission": {
+        "status": "running",
+        "phase": "pre_launch",
+        "scenario": "nominal",
+        "speed": 1,
+        "seed": 2026,
+        "tick": 0,
+        "elapsed_hours": 0.0,
+        "mission_day": 0.0,
+        "active_stressors": [
+          "Nominal habitat operations",
+          "Routine monitoring"
+        ],
+        "environmental_conditions": [
+          "Baseline preparation and systems checkout",
+          ""
+        ],
+        "health": {
+          "heart_rate": 72.0,
+          "oxygen_saturation": 98.0,
+          "sleep_hours": 7.5,
+          "stress_index": 20.0,
+          "fatigue_index": 18.0,
+          "workload_index": 25.0,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.096603+00:00",
+          "data_type": "simulated"
+        },
+        "alerts": [],
+        "last_updated": "2026-11-16T00:51:59.096603+00:00"
+      },
+      "alerts": [],
+      "predictions": [
+        {
+          "metric": "heart_rate",
+          "unit": "BPM",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.096688+00:00"
+        },
+        {
+          "metric": "oxygen_saturation",
+          "unit": "%",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.096716+00:00"
+        },
+        {
+          "metric": "fatigue_index",
+          "unit": "index (0-100)",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.096727+00:00"
+        },
+        {
+          "metric": "stress_index",
+          "unit": "index (0-100)",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.096736+00:00"
+        },
+        {
+          "metric": "sleep_hours",
+          "unit": "hours",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.096744+00:00"
+        }
+      ],
+      "insights": {
+        "title": "AstroHealth Insights",
+        "summary": "Current scenario: nominal. More mission ticks are needed before short-term trends can be estimated. There are 0 unacknowledged demonstration alerts and 0 statistical anomalies.",
+        "factors": [
+          "Scenario parameters and bounded random variation influence these simulated measurements.",
+          "Trend and anomaly results describe data patterns only; they do not diagnose medical conditions."
+        ],
+        "limitations": [
+          "No clinical model, NASA medical threshold, or validated prediction accuracy is used.",
+          "The in-memory history is reset when the backend process restarts."
+        ],
+        "current_indicators": {
+          "heart_rate": 72.0,
+          "oxygen_saturation": 98.0,
+          "sleep_hours": 7.5,
+          "stress_index": 20.0,
+          "fatigue_index": 18.0,
+          "workload_index": 25.0,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.096603+00:00",
+          "data_type": "simulated"
+        },
+        "data_type": "simulated_experimental"
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/analytics/summary",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "mission_day": 0.0,
+      "scenario": "nominal",
+      "phase": "pre_launch",
+      "observations": 0,
+      "predictions": [
+        {
+          "metric": "heart_rate",
+          "unit": "BPM",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.099460+00:00"
+        },
+        {
+          "metric": "oxygen_saturation",
+          "unit": "%",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.099471+00:00"
+        },
+        {
+          "metric": "fatigue_index",
+          "unit": "index (0-100)",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.099477+00:00"
+        },
+        {
+          "metric": "stress_index",
+          "unit": "index (0-100)",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.099484+00:00"
+        },
+        {
+          "metric": "sleep_hours",
+          "unit": "hours",
+          "status": "insufficient_data",
+          "predicted_value": null,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "linear trend over a moving window",
+          "observations": 0,
+          "data_quality": "insufficient",
+          "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+          "generated_at": "2026-11-16T00:51:59.099495+00:00"
+        }
+      ],
+      "anomalies": [
+        {
+          "metric": "heart_rate",
+          "status": "insufficient_data",
+          "observed_value": null,
+          "rolling_mean": null,
+          "rolling_std": null,
+          "window": 8,
+          "observations": 0,
+          "explanation": "At least 3 valid observations are required."
+        },
+        {
+          "metric": "oxygen_saturation",
+          "status": "insufficient_data",
+          "observed_value": null,
+          "rolling_mean": null,
+          "rolling_std": null,
+          "window": 8,
+          "observations": 0,
+          "explanation": "At least 3 valid observations are required."
+        },
+        {
+          "metric": "fatigue_index",
+          "status": "insufficient_data",
+          "observed_value": null,
+          "rolling_mean": null,
+          "rolling_std": null,
+          "window": 8,
+          "observations": 0,
+          "explanation": "At least 3 valid observations are required."
+        },
+        {
+          "metric": "stress_index",
+          "status": "insufficient_data",
+          "observed_value": null,
+          "rolling_mean": null,
+          "rolling_std": null,
+          "window": 8,
+          "observations": 0,
+          "explanation": "At least 3 valid observations are required."
+        },
+        {
+          "metric": "sleep_hours",
+          "status": "insufficient_data",
+          "observed_value": null,
+          "rolling_mean": null,
+          "rolling_std": null,
+          "window": 8,
+          "observations": 0,
+          "explanation": "At least 3 valid observations are required."
+        }
+      ],
+      "alerts": [],
+      "data_quality": "insufficient",
+      "disclaimer": "Simulated, experimental analytics only; not clinically validated or medical advice."
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/analytics/predictions",
+    "body": null,
+    "status": 200,
+    "payload": [
+      {
+        "metric": "heart_rate",
+        "unit": "BPM",
+        "status": "insufficient_data",
+        "predicted_value": null,
+        "forecast_horizon": "next 3 simulation ticks",
+        "method": "linear trend over a moving window",
+        "observations": 0,
+        "data_quality": "insufficient",
+        "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+        "generated_at": "2026-11-16T00:51:59.101260+00:00"
+      },
+      {
+        "metric": "oxygen_saturation",
+        "unit": "%",
+        "status": "insufficient_data",
+        "predicted_value": null,
+        "forecast_horizon": "next 3 simulation ticks",
+        "method": "linear trend over a moving window",
+        "observations": 0,
+        "data_quality": "insufficient",
+        "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+        "generated_at": "2026-11-16T00:51:59.101271+00:00"
+      },
+      {
+        "metric": "fatigue_index",
+        "unit": "index (0-100)",
+        "status": "insufficient_data",
+        "predicted_value": null,
+        "forecast_horizon": "next 3 simulation ticks",
+        "method": "linear trend over a moving window",
+        "observations": 0,
+        "data_quality": "insufficient",
+        "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+        "generated_at": "2026-11-16T00:51:59.101277+00:00"
+      },
+      {
+        "metric": "stress_index",
+        "unit": "index (0-100)",
+        "status": "insufficient_data",
+        "predicted_value": null,
+        "forecast_horizon": "next 3 simulation ticks",
+        "method": "linear trend over a moving window",
+        "observations": 0,
+        "data_quality": "insufficient",
+        "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+        "generated_at": "2026-11-16T00:51:59.101284+00:00"
+      },
+      {
+        "metric": "sleep_hours",
+        "unit": "hours",
+        "status": "insufficient_data",
+        "predicted_value": null,
+        "forecast_horizon": "next 3 simulation ticks",
+        "method": "linear trend over a moving window",
+        "observations": 0,
+        "data_quality": "insufficient",
+        "explanation": "At least 3 valid observations are required; no prediction was fabricated.",
+        "generated_at": "2026-11-16T00:51:59.101289+00:00"
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/analytics/anomalies",
+    "body": null,
+    "status": 200,
+    "payload": [
+      {
+        "metric": "heart_rate",
+        "status": "insufficient_data",
+        "observed_value": null,
+        "rolling_mean": null,
+        "rolling_std": null,
+        "window": 8,
+        "observations": 0,
+        "explanation": "At least 3 valid observations are required."
+      },
+      {
+        "metric": "oxygen_saturation",
+        "status": "insufficient_data",
+        "observed_value": null,
+        "rolling_mean": null,
+        "rolling_std": null,
+        "window": 8,
+        "observations": 0,
+        "explanation": "At least 3 valid observations are required."
+      },
+      {
+        "metric": "fatigue_index",
+        "status": "insufficient_data",
+        "observed_value": null,
+        "rolling_mean": null,
+        "rolling_std": null,
+        "window": 8,
+        "observations": 0,
+        "explanation": "At least 3 valid observations are required."
+      },
+      {
+        "metric": "stress_index",
+        "status": "insufficient_data",
+        "observed_value": null,
+        "rolling_mean": null,
+        "rolling_std": null,
+        "window": 8,
+        "observations": 0,
+        "explanation": "At least 3 valid observations are required."
+      },
+      {
+        "metric": "sleep_hours",
+        "status": "insufficient_data",
+        "observed_value": null,
+        "rolling_mean": null,
+        "rolling_std": null,
+        "window": 8,
+        "observations": 0,
+        "explanation": "At least 3 valid observations are required."
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/alerts",
+    "body": null,
+    "status": 200,
+    "payload": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/insights",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "title": "AstroHealth Insights",
+      "summary": "Current scenario: nominal. More mission ticks are needed before short-term trends can be estimated. There are 0 unacknowledged demonstration alerts and 0 statistical anomalies.",
+      "factors": [
+        "Scenario parameters and bounded random variation influence these simulated measurements.",
+        "Trend and anomaly results describe data patterns only; they do not diagnose medical conditions."
+      ],
+      "limitations": [
+        "No clinical model, NASA medical threshold, or validated prediction accuracy is used.",
+        "The in-memory history is reset when the backend process restarts."
+      ],
+      "current_indicators": {
+        "heart_rate": 72.0,
+        "oxygen_saturation": 98.0,
+        "sleep_hours": 7.5,
+        "stress_index": 20.0,
+        "fatigue_index": 18.0,
+        "workload_index": 25.0,
+        "radiation_dose_rate": 0.12,
+        "timestamp": "2026-11-16T00:51:59.106809+00:00",
+        "data_type": "simulated"
+      },
+      "data_type": "simulated_experimental"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/analytics/insights",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "title": "AstroHealth Insights",
+      "summary": "Current scenario: nominal. More mission ticks are needed before short-term trends can be estimated. There are 0 unacknowledged demonstration alerts and 0 statistical anomalies.",
+      "factors": [
+        "Scenario parameters and bounded random variation influence these simulated measurements.",
+        "Trend and anomaly results describe data patterns only; they do not diagnose medical conditions."
+      ],
+      "limitations": [
+        "No clinical model, NASA medical threshold, or validated prediction accuracy is used.",
+        "The in-memory history is reset when the backend process restarts."
+      ],
+      "current_indicators": {
+        "heart_rate": 72.0,
+        "oxygen_saturation": 98.0,
+        "sleep_hours": 7.5,
+        "stress_index": 20.0,
+        "fatigue_index": 18.0,
+        "workload_index": 25.0,
+        "radiation_dose_rate": 0.12,
+        "timestamp": "2026-11-16T00:51:59.108973+00:00",
+        "data_type": "simulated"
+      },
+      "data_type": "simulated_experimental"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/mission/events",
+    "body": null,
+    "status": 200,
+    "payload": [
+      {
+        "id": "8e2a72b9-1496-48f5-8da9-deecfc45c114",
+        "event_type": "simulation_started",
+        "description": "Simulation started.",
+        "mission_timestamp": 0.0,
+        "recorded_at": "2026-11-16T00:51:59.086666+00:00",
+        "scenario": "nominal",
+        "metric": null
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/mission/readiness",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "score": 84,
+      "category": "Nominal",
+      "formula": "100 - (fatigue x 0.30 + stress x 0.25 + sleep deficit x 0.20 + workload x 0.15 + alert penalty x 0.10)",
+      "weights": {
+        "fatigue_index": 0.3,
+        "stress_index": 0.25,
+        "sleep_hours": 0.2,
+        "workload_index": 0.15,
+        "active_alerts": 0.1
+      },
+      "inputs": {
+        "fatigue_index": 18.0,
+        "stress_index": 20.0,
+        "sleep_hours": 7.5,
+        "workload_index": 25.0,
+        "active_alerts": 0.0
+      },
+      "missing_data_behavior": "Missing indicators contribute zero penalty and are disclosed by the source data quality.",
+      "limitations": [
+        "Demonstration-only rules, not NASA operational or medical readiness standards.",
+        "The score cannot determine whether an astronaut is medically fit for duty.",
+        "Inputs are simulated and not clinically validated."
+      ]
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/export/telemetry.json",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "metadata": {
+        "seed": 2026,
+        "scenario": "nominal",
+        "phase": "pre_launch",
+        "units": "SI/display units documented per field"
+      },
+      "telemetry": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/export/events.json",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "metadata": {
+        "seed": 2026,
+        "scenario": "nominal",
+        "phase": "pre_launch"
+      },
+      "events": [
+        {
+          "id": "8e2a72b9-1496-48f5-8da9-deecfc45c114",
+          "event_type": "simulation_started",
+          "description": "Simulation started.",
+          "mission_timestamp": 0.0,
+          "recorded_at": "2026-11-16T00:51:59.086666+00:00",
+          "scenario": "nominal",
+          "metric": null
+        }
+      ],
+      "alerts": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/command/state",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "mission": {
+        "status": "running",
+        "phase": "pre_launch",
+        "scenario": "nominal",
+        "speed": 1,
+        "seed": 2026,
+        "tick": 0,
+        "elapsed_hours": 0.0,
+        "mission_day": 0.0,
+        "active_stressors": [
+          "Nominal habitat operations",
+          "Routine monitoring"
+        ],
+        "environmental_conditions": [
+          "Baseline preparation and systems checkout",
+          ""
+        ],
+        "health": {
+          "heart_rate": 72.0,
+          "oxygen_saturation": 98.0,
+          "sleep_hours": 7.5,
+          "stress_index": 20.0,
+          "fatigue_index": 18.0,
+          "workload_index": 25.0,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.125035+00:00",
+          "data_type": "simulated"
+        },
+        "alerts": [],
+        "last_updated": "2026-11-16T00:51:59.125035+00:00"
+      },
+      "active_scenario": null,
+      "initial_measurements": null,
+      "selected_actions": [],
+      "last_consequence": null,
+      "messages": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/command/scenarios",
+    "body": null,
+    "status": 200,
+    "payload": [
+      {
+        "id": "sleep_deprivation",
+        "name": "Sleep Deprivation",
+        "description": "Reduced sleep opportunity with cumulative fatigue.",
+        "starting_conditions": [
+          "Sleep opportunity is reduced.",
+          "Baseline telemetry remains authoritative."
+        ],
+        "affected_indicators": [
+          "sleep_hours",
+          "fatigue_index",
+          "stress_index"
+        ],
+        "parameters": {
+          "sleep_loss_hours": 1.5,
+          "step_hours": 1
+        },
+        "actions": [
+          {
+            "id": "schedule_rest",
+            "name": "Schedule Rest Period",
+            "description": "Recover sleep and reduce fatigue.",
+            "explanation": "Rest adds recovery in the illustrative model."
+          },
+          {
+            "id": "reduce_workload",
+            "name": "Reduce Workload",
+            "description": "Lower task demand while preserving the sleep deficit.",
+            "explanation": "Reduced demand limits additional fatigue."
+          },
+          {
+            "id": "continue_schedule",
+            "name": "Continue Current Schedule",
+            "description": "No intervention; allow the condition to persist.",
+            "explanation": "The model applies continued recovery debt."
+          }
+        ],
+        "assumptions": [
+          "Sleep effects are simplified and not clinically calibrated."
+        ],
+        "expected_outcomes": [
+          "Rest lowers fatigue.",
+          "Continuing the schedule increases fatigue."
+        ]
+      },
+      {
+        "id": "elevated_workload",
+        "name": "Elevated Workload",
+        "description": "Increased task demand with illustrative heart-rate and workload trends.",
+        "starting_conditions": [
+          "Task workload is elevated.",
+          "No injury or diagnosis is inferred."
+        ],
+        "affected_indicators": [
+          "workload_index",
+          "heart_rate",
+          "fatigue_index",
+          "stress_index"
+        ],
+        "parameters": {
+          "workload_increment": 20.0,
+          "step_hours": 1
+        },
+        "actions": [
+          {
+            "id": "reduce_activity",
+            "name": "Reduce Activity",
+            "description": "Reduce task demand immediately.",
+            "explanation": "Lower demand reduces the illustrative load."
+          },
+          {
+            "id": "schedule_recovery",
+            "name": "Schedule Recovery",
+            "description": "Reduce workload and allow recovery.",
+            "explanation": "Recovery lowers load and fatigue."
+          },
+          {
+            "id": "continue_monitoring",
+            "name": "Continue Monitoring",
+            "description": "Observe without changing the workload.",
+            "explanation": "The model keeps the elevated demand active."
+          }
+        ],
+        "assumptions": [
+          "Effects are bounded demonstration indices, not operational guidance."
+        ],
+        "expected_outcomes": [
+          "Reducing activity lowers workload.",
+          "Monitoring alone allows a small rise."
+        ]
+      },
+      {
+        "id": "isolation_stress",
+        "name": "Isolation Stress",
+        "description": "Gradually increasing simulated stress during limited contact.",
+        "starting_conditions": [
+          "Communication opportunities are limited.",
+          "Stress index is dimensionless."
+        ],
+        "affected_indicators": [
+          "stress_index",
+          "fatigue_index",
+          "workload_index"
+        ],
+        "parameters": {
+          "stress_increment": 12.0,
+          "step_hours": 1
+        },
+        "actions": [
+          {
+            "id": "schedule_recreation",
+            "name": "Schedule Recreation",
+            "description": "Add a recovery activity.",
+            "explanation": "Recreation reduces the illustrative stress index."
+          },
+          {
+            "id": "adjust_workload",
+            "name": "Adjust Workload",
+            "description": "Reduce task demand during isolation.",
+            "explanation": "Lower demand reduces modeled stress."
+          },
+          {
+            "id": "request_delayed_support",
+            "name": "Request Delayed Mission Support",
+            "description": "Queue a support message using the mission clock.",
+            "explanation": "Support changes the index modestly after a communication delay."
+          }
+        ],
+        "assumptions": [
+          "The index is not a psychological diagnosis."
+        ],
+        "expected_outcomes": [
+          "Support and recreation reduce stress in this illustrative model."
+        ]
+      },
+      {
+        "id": "elevated_radiation_environment",
+        "name": "Elevated Radiation Environment",
+        "description": "Hypothetical environmental dose-rate warning.",
+        "starting_conditions": [
+          "Environmental dose-rate indicator is elevated.",
+          "No immediate symptom is inferred."
+        ],
+        "affected_indicators": [
+          "radiation_dose_rate",
+          "stress_index"
+        ],
+        "parameters": {
+          "dose_rate_increment": 0.28,
+          "step_hours": 1
+        },
+        "actions": [
+          {
+            "id": "review_environmental_data",
+            "name": "Review Environmental Data",
+            "description": "Inspect the indicator without changing it.",
+            "explanation": "Review has a small modeled uncertainty reduction."
+          },
+          {
+            "id": "protective_mode",
+            "name": "Enter Simulated Protective Mode",
+            "description": "Apply an illustrative shielding response.",
+            "explanation": "Protective mode reduces the environmental indicator only."
+          },
+          {
+            "id": "request_mission_control_review",
+            "name": "Request Mission Control Review",
+            "description": "Queue an Earth review message.",
+            "explanation": "Review is represented as a delayed support action."
+          }
+        ],
+        "assumptions": [
+          "Dose rate is an illustrative environmental indicator in mSv/day.",
+          "It is not mission data or a medical exposure assessment."
+        ],
+        "expected_outcomes": [
+          "Protective mode lowers the indicator without inferring symptoms."
+        ]
+      },
+      {
+        "id": "communication_delay",
+        "name": "Communication Delay",
+        "description": "Delayed communication between Earth and spacecraft.",
+        "starting_conditions": [
+          "One-way delay is controlled by mission time.",
+          "Network latency is not represented."
+        ],
+        "affected_indicators": [
+          "stress_index"
+        ],
+        "parameters": {
+          "one_way_delay_hours": 22.0,
+          "step_hours": 1
+        },
+        "actions": [
+          {
+            "id": "send_status_request",
+            "name": "Send Status Request",
+            "description": "Send a demonstration status request.",
+            "explanation": "The request is queued until simulated delivery."
+          },
+          {
+            "id": "continue_autonomous_monitoring",
+            "name": "Continue Autonomous Monitoring",
+            "description": "Continue with no message.",
+            "explanation": "The model applies a small communication uncertainty cost."
+          }
+        ],
+        "assumptions": [
+          "Delay is fictional and scenario-configurable."
+        ],
+        "expected_outcomes": [
+          "Messages remain pending until mission time reaches delivery."
+        ]
+      },
+      {
+        "id": "habitat_environmental_warning",
+        "name": "Habitat Environmental Warning",
+        "description": "Hypothetical habitat monitoring warning.",
+        "starting_conditions": [
+          "A habitat indicator requires review.",
+          "No real spacecraft procedure is implied."
+        ],
+        "affected_indicators": [
+          "stress_index",
+          "workload_index"
+        ],
+        "parameters": {
+          "warning_level": "amber",
+          "step_hours": 1
+        },
+        "actions": [
+          {
+            "id": "review_environmental_data",
+            "name": "Review Environmental Data",
+            "description": "Review the simulated habitat indicator.",
+            "explanation": "Review reduces modeled uncertainty."
+          },
+          {
+            "id": "protective_mode",
+            "name": "Enter Simulated Protective Mode",
+            "description": "Apply a reversible demonstration mode.",
+            "explanation": "The mode reduces modeled workload."
+          },
+          {
+            "id": "request_mission_control_review",
+            "name": "Request Mission Control Review",
+            "description": "Queue a delayed review message.",
+            "explanation": "Review is delayed by the mission clock."
+          }
+        ],
+        "assumptions": [
+          "Indicators are fictional demonstration inputs."
+        ],
+        "expected_outcomes": [
+          "Review and protective mode reduce modeled workload or uncertainty."
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/command/actions",
+    "body": null,
+    "status": 200,
+    "payload": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/command/events",
+    "body": null,
+    "status": 200,
+    "payload": [
+      {
+        "id": "8e2a72b9-1496-48f5-8da9-deecfc45c114",
+        "event_type": "simulation_started",
+        "description": "Simulation started.",
+        "mission_timestamp": 0.0,
+        "recorded_at": "2026-11-16T00:51:59.086666+00:00",
+        "scenario": "nominal",
+        "metric": null
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/command/messages",
+    "body": null,
+    "status": 200,
+    "payload": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/command/after-action.json",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "scenario": null,
+      "initial_measurements": null,
+      "selected_actions": [],
+      "final_measurements": {
+        "heart_rate": 72.0,
+        "oxygen_saturation": 98.0,
+        "sleep_hours": 7.5,
+        "stress_index": 20.0,
+        "fatigue_index": 18.0,
+        "workload_index": 25.0,
+        "radiation_dose_rate": 0.12,
+        "timestamp": "2026-11-16T00:51:59.135470+00:00",
+        "data_type": "simulated"
+      },
+      "elapsed_hours": 0.0,
+      "alerts": [],
+      "events": [
+        {
+          "id": "8e2a72b9-1496-48f5-8da9-deecfc45c114",
+          "event_type": "simulation_started",
+          "description": "Simulation started.",
+          "mission_timestamp": 0.0,
+          "recorded_at": "2026-11-16T00:51:59.086666+00:00",
+          "scenario": "nominal",
+          "metric": null
+        }
+      ],
+      "assumptions": [
+        "No emergency scenario activated."
+      ],
+      "limitations": [
+        "Educational simulation only.",
+        "No real medical, spacecraft, or operational response is represented."
+      ],
+      "generated_at": "2026-11-16T00:51:59.135513+00:00"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/demo/status",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "checks": [
+        {
+          "id": "backend",
+          "name": "FastAPI backend",
+          "status": "Ready",
+          "detail": "Mission API is responding.",
+          "guidance": ""
+        },
+        {
+          "id": "digital_twin_model",
+          "name": "Digital Twin GLB model",
+          "status": "Ready",
+          "detail": "Astronaut model is available.",
+          "guidance": ""
+        },
+        {
+          "id": "telemetry",
+          "name": "Telemetry history",
+          "status": "Requires Setup",
+          "detail": "0 observations available.",
+          "guidance": "Start the mission and advance at least three simulated ticks."
+        },
+        {
+          "id": "analytics",
+          "name": "AI Health Analytics",
+          "status": "Ready",
+          "detail": "Analytics routes are registered.",
+          "guidance": ""
+        },
+        {
+          "id": "reports",
+          "name": "Mission report generation",
+          "status": "Ready",
+          "detail": "PDF report route is registered.",
+          "guidance": ""
+        }
+      ],
+      "ready": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/demo/state",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "active": false,
+      "preset_name": "Mars Crew Health Demonstration",
+      "seed": 7042,
+      "current_step": 0,
+      "total_steps": 8,
+      "step": {
+        "id": "introduction",
+        "title": "Mission introduction",
+        "description": "Meet AstroHealth, Team EAGLES, and the long-duration mission-health monitoring challenge.",
+        "action": "Review the mission context."
+      },
+      "steps": [
+        {
+          "id": "introduction",
+          "title": "Mission introduction",
+          "description": "Meet AstroHealth, Team EAGLES, and the long-duration mission-health monitoring challenge.",
+          "action": "Review the mission context."
+        },
+        {
+          "id": "live_monitoring",
+          "title": "Live health monitoring",
+          "description": "Observe simulated telemetry and how the application presents health indicators.",
+          "action": "Advance one controlled mission hour."
+        },
+        {
+          "id": "digital_twin",
+          "title": "Astronaut Digital Twin",
+          "description": "Open the Digital Twin to view the same authoritative measurements in the 3D crew view.",
+          "action": "Open Digital Twin when ready."
+        },
+        {
+          "id": "mission_scenario",
+          "title": "Mission scenario",
+          "description": "The deterministic preset activates an Elevated Workload scenario over a Mars surface phase.",
+          "action": "Review the active scenario in Mission Command."
+        },
+        {
+          "id": "smart_alert",
+          "title": "Smart alert",
+          "description": "A real configured demonstration rule is triggered by the preset stress indicator; no alert is inserted in the frontend.",
+          "action": "Review the Risk Alerts page."
+        },
+        {
+          "id": "mission_response",
+          "title": "Mission response",
+          "description": "Select a context-specific response action and compare before/after simulated indicators.",
+          "action": "Choose a response in Mission Command."
+        },
+        {
+          "id": "analytics",
+          "title": "AI health analytics",
+          "description": "Review explainable statistical trends, data quality, anomalies, and forecasts when enough observations exist.",
+          "action": "Open AI Health Analytics."
+        },
+        {
+          "id": "report",
+          "title": "Mission report",
+          "description": "Generate a report from the current simulated state and review assumptions and limitations.",
+          "action": "Download a mission report."
+        }
+      ],
+      "mission": {
+        "status": "running",
+        "phase": "pre_launch",
+        "scenario": "nominal",
+        "speed": 1,
+        "seed": 2026,
+        "tick": 0,
+        "elapsed_hours": 0.0,
+        "mission_day": 0.0,
+        "active_stressors": [
+          "Nominal habitat operations",
+          "Routine monitoring"
+        ],
+        "environmental_conditions": [
+          "Baseline preparation and systems checkout",
+          ""
+        ],
+        "health": {
+          "heart_rate": 72.0,
+          "oxygen_saturation": 98.0,
+          "sleep_hours": 7.5,
+          "stress_index": 20.0,
+          "fatigue_index": 18.0,
+          "workload_index": 25.0,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.140110+00:00",
+          "data_type": "simulated"
+        },
+        "alerts": [],
+        "last_updated": "2026-11-16T00:51:59.140110+00:00"
+      },
+      "alert_count": 0,
+      "response_available": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/nasa/evidence",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "study": {
+        "source_name": "NASA Open Science Data Repository (OSDR)",
+        "accession": "OSD-379",
+        "study_identifier": "RRRM-1 / GLDS-379",
+        "title": "Transcriptional profiling of livers from mice flown on Rodent Research Reference Mission-1 (RRRM-1)",
+        "study_url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-379",
+        "metadata_url": "https://nasa-osdr.s3.us-west-2.amazonaws.com/OSD-379/version-3/metadata/GLDS-379_metadata_GLDS-379-ISA.zip",
+        "data_listing_url": "https://nasa-osdr.s3.us-west-2.amazonaws.com/?list-type=2&prefix=OSD-379/version-3/&max-keys=20",
+        "study_scope": "Animal spaceflight research; not direct astronaut health telemetry.",
+        "biological_context": "Female BALB/cAnNTac mice; the study profiles liver tissue using ribodepleted total RNA sequencing.",
+        "mission_context": "Rodent Research-8 on the International Space Station. The study includes ISS-terminal animals, live-animal-return animals, and matched ground, basal, and vivarium controls.",
+        "relevance": "Provides spaceflight-associated biological research context for understanding how mission conditions can affect animal tissues.",
+        "sample_context": [
+          "160 mice were included across young and old cohorts and control groups.",
+          "The metadata reports 7-10 liver samples per group.",
+          "Young mice were 10-12 weeks old; old mice were 32 weeks old."
+        ],
+        "available_measurements": [
+          "Transcription profiling by RNA sequencing (RNA-seq).",
+          "Illumina NovaSeq platform; paired-end 149 bp reads.",
+          "Public raw sequence, processed count, normalized count, and differential-expression files are listed by the study metadata."
+        ],
+        "numerical_values_imported": false,
+        "availability_note": "AstroHealth imports verified study metadata only. It does not download or transform RNA-seq measurements into astronaut telemetry.",
+        "license_note": "The NASA OSDR AWS Open Data Registry entry states that the data has no restrictions on use. Cite NASA OSDR and the study accession.",
+        "retrieved_at": "2026-11-14"
+      },
+      "additional_studies": [
+        {
+          "source_name": "NASA Open Science Data Repository (OSDR)",
+          "accession": "OSD-202",
+          "study_identifier": "OSD-202",
+          "title": "Low dose (0.04 Gy) irradiation (LDR) and hindlimb unloading (HLU) microgravity in mice: brain transcriptomic and epigenomic data",
+          "study_url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-202",
+          "metadata_url": "https://nasa-osdr.s3.us-west-2.amazonaws.com/OSD-202/version-10/metadata/OSD-202_metadata_OSD-202-ISA.zip",
+          "data_listing_url": "https://nasa-osdr.s3.us-west-2.amazonaws.com/?list-type=2&prefix=OSD-202/version-10/&max-keys=20",
+          "study_scope": "Animal ground research; not direct astronaut health telemetry.",
+          "biological_context": "Mature, 6-month-old female C57BL/6 mice. Brain and eye-related tissues were collected after the modeled spaceflight conditions.",
+          "mission_context": "This is a ground-based model for spaceflight, not an ISS mission. Hindlimb unloading models unloading, fluid shift, and physiological stress; whole-body 57Co gamma irradiation models a low-dose radiation component.",
+          "relevance": "Its combined unloading and low-dose radiation design provides animal research context for studying biological responses relevant to spaceflight health, while not predicting human crew outcomes.",
+          "sample_context": [
+            "Mice were hindlimb-suspended and/or irradiated for 21 days.",
+            "Tissues were collected 7 days and 1, 4, and 9 months after treatment.",
+            "The study was released as a NASA-funded ground study; it is not astronaut telemetry."
+          ],
+          "available_measurements": [
+            "Brain transcriptomic profiling by RNA sequencing.",
+            "Transcription profiling by Illumina DNA microarray.",
+            "DNA methylation profiling by reduced-representation bisulfite sequencing."
+          ],
+          "numerical_values_imported": false,
+          "availability_note": "AstroHealth imports verified study metadata only. It does not download or transform OSD-202 measurements into astronaut telemetry.",
+          "license_note": "The NASA OSDR AWS Open Data Registry entry states that the data has no restrictions on use. Cite NASA OSDR and the study accession.",
+          "retrieved_at": "2026-11-14"
+        }
+      ],
+      "distinction": "NASA research metadata and measurement availability are shown separately from AstroHealth's seeded simulated astronaut telemetry. The OSDR study does not calibrate the simulator, alerts, forecasts, readiness score, or medical conclusions."
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/healthcheck",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "status": "ok",
+      "service": "astrohealth-api"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/session",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "status": "ready"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/astronaut",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "id": 1,
+      "name": "Alex Morgan",
+      "mission": "Mars Exploration",
+      "status": "Active"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/health",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "astronaut_id": 1,
+      "heart_rate": 72.0,
+      "oxygen_level": 98.0,
+      "radiation": 0.12,
+      "sleep_hours": 7.5,
+      "stress_level": 20.0,
+      "timestamp": "2026-11-16T00:51:59.148803+00:00",
+      "data_type": "simulated"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/health/live",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "heart_rate": 72.0,
+      "oxygen_level": 98.0,
+      "sleep_hours": 7.5,
+      "stress_level": 20.0,
+      "fatigue_index": 18.0,
+      "workload_index": 25.0,
+      "radiation": 0.12,
+      "timestamp": "2026-11-16T00:51:59.150529+00:00",
+      "data_type": "simulated"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/health/history",
+    "body": null,
+    "status": 200,
+    "payload": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/mission/scenario",
+    "body": {
+      "scenario": "sleep_disruption"
+    },
+    "status": 200,
+    "payload": {
+      "status": "running",
+      "phase": "pre_launch",
+      "scenario": "sleep_disruption",
+      "speed": 1,
+      "seed": 2026,
+      "tick": 0,
+      "elapsed_hours": 0.0,
+      "mission_day": 0.0,
+      "active_stressors": [
+        "Disrupted sleep schedule",
+        "Limited recovery time"
+      ],
+      "environmental_conditions": [
+        "Baseline preparation and systems checkout",
+        ""
+      ],
+      "health": {
+        "heart_rate": 72.0,
+        "oxygen_saturation": 98.0,
+        "sleep_hours": 7.5,
+        "stress_index": 20.0,
+        "fatigue_index": 18.0,
+        "workload_index": 25.0,
+        "radiation_dose_rate": 0.12,
+        "timestamp": "2026-11-16T00:51:59.154202+00:00",
+        "data_type": "simulated"
+      },
+      "alerts": [],
+      "last_updated": "2026-11-16T00:51:59.154202+00:00"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/mission/advance",
+    "body": {
+      "ticks": 12
+    },
+    "status": 200,
+    "payload": {
+      "status": "running",
+      "phase": "pre_launch",
+      "scenario": "sleep_disruption",
+      "speed": 1,
+      "seed": 2026,
+      "tick": 12,
+      "elapsed_hours": 12.0,
+      "mission_day": 0.5,
+      "active_stressors": [
+        "Disrupted sleep schedule",
+        "Limited recovery time"
+      ],
+      "environmental_conditions": [
+        "Baseline preparation and systems checkout",
+        ""
+      ],
+      "health": {
+        "heart_rate": 73.78,
+        "oxygen_saturation": 97.87,
+        "sleep_hours": 6.23,
+        "stress_index": 30.73,
+        "fatigue_index": 30.99,
+        "workload_index": 23.91,
+        "radiation_dose_rate": 0.12,
+        "timestamp": "2026-11-16T00:51:59.156311+00:00",
+        "data_type": "simulated"
+      },
+      "alerts": [],
+      "last_updated": "2026-11-16T00:51:59.156311+00:00"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/analytics/summary",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "mission_day": 0.5,
+      "scenario": "sleep_disruption",
+      "phase": "pre_launch",
+      "observations": 12,
+      "predictions": [
+        {
+          "metric": "heart_rate",
+          "unit": "BPM",
+          "status": "ready",
+          "predicted_value": 75.07,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "moving average (8) + linear trend",
+          "observations": 12,
+          "data_quality": "good",
+          "explanation": "Estimated from the latest 8 valid observations. This is an experimental statistical trend, not a clinical forecast.",
+          "generated_at": "2026-11-16T00:51:59.157810+00:00"
+        },
+        {
+          "metric": "oxygen_saturation",
+          "unit": "%",
+          "status": "ready",
+          "predicted_value": 97.83,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "moving average (8) + linear trend",
+          "observations": 12,
+          "data_quality": "good",
+          "explanation": "Estimated from the latest 8 valid observations. This is an experimental statistical trend, not a clinical forecast.",
+          "generated_at": "2026-11-16T00:51:59.157848+00:00"
+        },
+        {
+          "metric": "fatigue_index",
+          "unit": "index (0-100)",
+          "status": "ready",
+          "predicted_value": 34.67,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "moving average (8) + linear trend",
+          "observations": 12,
+          "data_quality": "good",
+          "explanation": "Estimated from the latest 8 valid observations. This is an experimental statistical trend, not a clinical forecast.",
+          "generated_at": "2026-11-16T00:51:59.157871+00:00"
+        },
+        {
+          "metric": "stress_index",
+          "unit": "index (0-100)",
+          "status": "ready",
+          "predicted_value": 33.31,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "moving average (8) + linear trend",
+          "observations": 12,
+          "data_quality": "good",
+          "explanation": "Estimated from the latest 8 valid observations. This is an experimental statistical trend, not a clinical forecast.",
+          "generated_at": "2026-11-16T00:51:59.157889+00:00"
+        },
+        {
+          "metric": "sleep_hours",
+          "unit": "hours",
+          "status": "ready",
+          "predicted_value": 5.9,
+          "forecast_horizon": "next 3 simulation ticks",
+          "method": "moving average (8) + linear trend",
+          "observations": 12,
+          "data_quality": "good",
+          "explanation": "Estimated from the latest 8 valid observations. This is an experimental statistical trend, not a clinical forecast.",
+          "generated_at": "2026-11-16T00:51:59.157906+00:00"
+        }
+      ],
+      "anomalies": [
+        {
+          "metric": "heart_rate",
+          "status": "normal",
+          "observed_value": 73.78,
+          "rolling_mean": 72.08,
+          "rolling_std": 1.06,
+          "window": 8,
+          "observations": 12,
+          "explanation": "The latest value is within the rolling statistical range. A statistical anomaly is not a medical diagnosis."
+        },
+        {
+          "metric": "oxygen_saturation",
+          "status": "normal",
+          "observed_value": 97.87,
+          "rolling_mean": 97.85,
+          "rolling_std": 0.08,
+          "window": 8,
+          "observations": 12,
+          "explanation": "The latest value is within the rolling statistical range. A statistical anomaly is not a medical diagnosis."
+        },
+        {
+          "metric": "fatigue_index",
+          "status": "normal",
+          "observed_value": 30.99,
+          "rolling_mean": 26.48,
+          "rolling_std": 2.56,
+          "window": 8,
+          "observations": 12,
+          "explanation": "The latest value is within the rolling statistical range. A statistical anomaly is not a medical diagnosis."
+        },
+        {
+          "metric": "stress_index",
+          "status": "normal",
+          "observed_value": 30.73,
+          "rolling_mean": 27.75,
+          "rolling_std": 1.84,
+          "window": 8,
+          "observations": 12,
+          "explanation": "The latest value is within the rolling statistical range. A statistical anomaly is not a medical diagnosis."
+        },
+        {
+          "metric": "sleep_hours",
+          "status": "normal",
+          "observed_value": 6.23,
+          "rolling_mean": 6.58,
+          "rolling_std": 0.25,
+          "window": 8,
+          "observations": 12,
+          "explanation": "The latest value is within the rolling statistical range. A statistical anomaly is not a medical diagnosis."
+        }
+      ],
+      "alerts": [],
+      "data_quality": "good",
+      "disclaimer": "Simulated, experimental analytics only; not clinically validated or medical advice."
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/mission/readiness",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "score": 72,
+      "category": "Attention",
+      "formula": "100 - (fatigue x 0.30 + stress x 0.25 + sleep deficit x 0.20 + workload x 0.15 + alert penalty x 0.10)",
+      "weights": {
+        "fatigue_index": 0.3,
+        "stress_index": 0.25,
+        "sleep_hours": 0.2,
+        "workload_index": 0.15,
+        "active_alerts": 0.1
+      },
+      "inputs": {
+        "fatigue_index": 30.99,
+        "stress_index": 30.73,
+        "sleep_hours": 6.23,
+        "workload_index": 23.91,
+        "active_alerts": 0.0
+      },
+      "missing_data_behavior": "Missing indicators contribute zero penalty and are disclosed by the source data quality.",
+      "limitations": [
+        "Demonstration-only rules, not NASA operational or medical readiness standards.",
+        "The score cannot determine whether an astronaut is medically fit for duty.",
+        "Inputs are simulated and not clinically validated."
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/mission/compare",
+    "body": {
+      "scenario_a": "nominal",
+      "scenario_b": "eva_activity",
+      "ticks": 12
+    },
+    "status": 200,
+    "payload": {
+      "scenario_a": {
+        "id": "nominal",
+        "name": "Nominal Mission",
+        "description": "Stable illustrative mission conditions with ordinary fluctuations.",
+        "active_phases": [
+          "pre_launch",
+          "deep_space_transit",
+          "mars_surface",
+          "return_transit"
+        ],
+        "environmental_conditions": [
+          "Nominal habitat operations",
+          "Routine monitoring"
+        ],
+        "expected_effects": [
+          "Small bounded variation around baseline measurements."
+        ],
+        "assumptions": [
+          "This is not a physiological prediction.",
+          "Values are generated for demonstration only."
+        ]
+      },
+      "scenario_b": {
+        "id": "eva_activity",
+        "name": "EVA Activity",
+        "description": "Illustrates extravehicular workload followed by recovery.",
+        "active_phases": [
+          "mars_surface"
+        ],
+        "environmental_conditions": [
+          "EVA task",
+          "Suit and habitat operations"
+        ],
+        "expected_effects": [
+          "Workload and heart rate rise during the activity."
+        ],
+        "assumptions": [
+          "The activity response is a simple demonstration model."
+        ]
+      },
+      "seed": 2026,
+      "ticks": 12,
+      "metrics": [
+        {
+          "metric": "heart_rate",
+          "unit": "BPM",
+          "scenario_a": 73.78,
+          "scenario_b": 112.66,
+          "absolute_difference": 38.88,
+          "percentage_difference": 52.7
+        },
+        {
+          "metric": "oxygen_saturation",
+          "unit": "%",
+          "scenario_a": 97.87,
+          "scenario_b": 97.87,
+          "absolute_difference": 0.0,
+          "percentage_difference": 0.0
+        },
+        {
+          "metric": "sleep_hours",
+          "unit": "hours",
+          "scenario_a": 7.19,
+          "scenario_b": 7.19,
+          "absolute_difference": 0.0,
+          "percentage_difference": 0.0
+        },
+        {
+          "metric": "stress_index",
+          "unit": "index (0-100)",
+          "scenario_a": 25.33,
+          "scenario_b": 28.33,
+          "absolute_difference": 3.0,
+          "percentage_difference": 11.84
+        },
+        {
+          "metric": "fatigue_index",
+          "unit": "index (0-100)",
+          "scenario_a": 19.23,
+          "scenario_b": 27.63,
+          "absolute_difference": 8.4,
+          "percentage_difference": 43.68
+        },
+        {
+          "metric": "workload_index",
+          "unit": "index (0-100)",
+          "scenario_a": 23.91,
+          "scenario_b": 76.71,
+          "absolute_difference": 52.8,
+          "percentage_difference": 220.83
+        },
+        {
+          "metric": "radiation_dose_rate",
+          "unit": "mSv/day",
+          "scenario_a": 0.12,
+          "scenario_b": 0.12,
+          "absolute_difference": 0.0,
+          "percentage_difference": 0.0
+        }
+      ],
+      "series": [
+        {
+          "tick": 1,
+          "scenario_a": 20.72,
+          "scenario_b": 20.97,
+          "scenario_a_fatigue": 17.21,
+          "scenario_b_fatigue": 17.91
+        },
+        {
+          "tick": 2,
+          "scenario_a": 21.18,
+          "scenario_b": 21.68,
+          "scenario_a_fatigue": 17.75,
+          "scenario_b_fatigue": 19.15
+        },
+        {
+          "tick": 3,
+          "scenario_a": 21.81,
+          "scenario_b": 22.56,
+          "scenario_a_fatigue": 17.65,
+          "scenario_b_fatigue": 19.75
+        },
+        {
+          "tick": 4,
+          "scenario_a": 22.77,
+          "scenario_b": 23.77,
+          "scenario_a_fatigue": 18.51,
+          "scenario_b_fatigue": 21.31
+        },
+        {
+          "tick": 5,
+          "scenario_a": 22.88,
+          "scenario_b": 24.13,
+          "scenario_a_fatigue": 18.09,
+          "scenario_b_fatigue": 21.59
+        },
+        {
+          "tick": 6,
+          "scenario_a": 23.3,
+          "scenario_b": 24.8,
+          "scenario_a_fatigue": 17.82,
+          "scenario_b_fatigue": 22.02
+        },
+        {
+          "tick": 7,
+          "scenario_a": 23.31,
+          "scenario_b": 25.06,
+          "scenario_a_fatigue": 18.32,
+          "scenario_b_fatigue": 23.22
+        },
+        {
+          "tick": 8,
+          "scenario_a": 24.16,
+          "scenario_b": 26.16,
+          "scenario_a_fatigue": 18.28,
+          "scenario_b_fatigue": 23.88
+        },
+        {
+          "tick": 9,
+          "scenario_a": 24.57,
+          "scenario_b": 26.82,
+          "scenario_a_fatigue": 19.05,
+          "scenario_b_fatigue": 25.35
+        },
+        {
+          "tick": 10,
+          "scenario_a": 25.34,
+          "scenario_b": 27.84,
+          "scenario_a_fatigue": 19.3,
+          "scenario_b_fatigue": 26.3
+        },
+        {
+          "tick": 11,
+          "scenario_a": 25.46,
+          "scenario_b": 28.21,
+          "scenario_a_fatigue": 19.64,
+          "scenario_b_fatigue": 27.34
+        },
+        {
+          "tick": 12,
+          "scenario_a": 25.33,
+          "scenario_b": 28.33,
+          "scenario_a_fatigue": 19.23,
+          "scenario_b_fatigue": 27.63
+        }
+      ],
+      "explanation": "Both isolated runs use the same seed, baseline, phase, duration, and time steps. Outputs are illustrative model results, not validated predictions of astronaut physiology."
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/command/activate",
+    "body": {
+      "scenario_id": "elevated_workload"
+    },
+    "status": 200,
+    "payload": {
+      "mission": {
+        "status": "running",
+        "phase": "pre_launch",
+        "scenario": "sleep_disruption",
+        "speed": 1,
+        "seed": 2026,
+        "tick": 12,
+        "elapsed_hours": 12.0,
+        "mission_day": 0.5,
+        "active_stressors": [
+          "Disrupted sleep schedule",
+          "Limited recovery time"
+        ],
+        "environmental_conditions": [
+          "Baseline preparation and systems checkout",
+          ""
+        ],
+        "health": {
+          "heart_rate": 73.78,
+          "oxygen_saturation": 97.87,
+          "sleep_hours": 6.23,
+          "stress_index": 30.73,
+          "fatigue_index": 30.99,
+          "workload_index": 23.91,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.165141+00:00",
+          "data_type": "simulated"
+        },
+        "alerts": [],
+        "last_updated": "2026-11-16T00:51:59.165141+00:00"
+      },
+      "active_scenario": {
+        "id": "elevated_workload",
+        "name": "Elevated Workload",
+        "description": "Increased task demand with illustrative heart-rate and workload trends.",
+        "starting_conditions": [
+          "Task workload is elevated.",
+          "No injury or diagnosis is inferred."
+        ],
+        "affected_indicators": [
+          "workload_index",
+          "heart_rate",
+          "fatigue_index",
+          "stress_index"
+        ],
+        "parameters": {
+          "workload_increment": 20.0,
+          "step_hours": 1
+        },
+        "actions": [
+          {
+            "id": "reduce_activity",
+            "name": "Reduce Activity",
+            "description": "Reduce task demand immediately.",
+            "explanation": "Lower demand reduces the illustrative load."
+          },
+          {
+            "id": "schedule_recovery",
+            "name": "Schedule Recovery",
+            "description": "Reduce workload and allow recovery.",
+            "explanation": "Recovery lowers load and fatigue."
+          },
+          {
+            "id": "continue_monitoring",
+            "name": "Continue Monitoring",
+            "description": "Observe without changing the workload.",
+            "explanation": "The model keeps the elevated demand active."
+          }
+        ],
+        "assumptions": [
+          "Effects are bounded demonstration indices, not operational guidance."
+        ],
+        "expected_outcomes": [
+          "Reducing activity lowers workload.",
+          "Monitoring alone allows a small rise."
+        ]
+      },
+      "initial_measurements": {
+        "heart_rate": 73.78,
+        "oxygen_saturation": 97.87,
+        "sleep_hours": 6.23,
+        "stress_index": 30.73,
+        "fatigue_index": 30.99,
+        "workload_index": 23.91,
+        "radiation_dose_rate": 0.12,
+        "timestamp": "2026-11-16T00:51:59.165036+00:00",
+        "data_type": "simulated"
+      },
+      "selected_actions": [],
+      "last_consequence": null,
+      "messages": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/command/respond",
+    "body": {
+      "action_id": "reduce_activity"
+    },
+    "status": 200,
+    "payload": {
+      "mission": {
+        "status": "running",
+        "phase": "pre_launch",
+        "scenario": "sleep_disruption",
+        "speed": 1,
+        "seed": 2026,
+        "tick": 13,
+        "elapsed_hours": 13.0,
+        "mission_day": 0.54,
+        "active_stressors": [
+          "Disrupted sleep schedule",
+          "Limited recovery time"
+        ],
+        "environmental_conditions": [
+          "Baseline preparation and systems checkout",
+          ""
+        ],
+        "health": {
+          "heart_rate": 68.78,
+          "oxygen_saturation": 97.87,
+          "sleep_hours": 6.23,
+          "stress_index": 28.73,
+          "fatigue_index": 30.99,
+          "workload_index": 3.91,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.167510+00:00",
+          "data_type": "simulated"
+        },
+        "alerts": [],
+        "last_updated": "2026-11-16T00:51:59.167510+00:00"
+      },
+      "active_scenario": {
+        "id": "elevated_workload",
+        "name": "Elevated Workload",
+        "description": "Increased task demand with illustrative heart-rate and workload trends.",
+        "starting_conditions": [
+          "Task workload is elevated.",
+          "No injury or diagnosis is inferred."
+        ],
+        "affected_indicators": [
+          "workload_index",
+          "heart_rate",
+          "fatigue_index",
+          "stress_index"
+        ],
+        "parameters": {
+          "workload_increment": 20.0,
+          "step_hours": 1
+        },
+        "actions": [
+          {
+            "id": "reduce_activity",
+            "name": "Reduce Activity",
+            "description": "Reduce task demand immediately.",
+            "explanation": "Lower demand reduces the illustrative load."
+          },
+          {
+            "id": "schedule_recovery",
+            "name": "Schedule Recovery",
+            "description": "Reduce workload and allow recovery.",
+            "explanation": "Recovery lowers load and fatigue."
+          },
+          {
+            "id": "continue_monitoring",
+            "name": "Continue Monitoring",
+            "description": "Observe without changing the workload.",
+            "explanation": "The model keeps the elevated demand active."
+          }
+        ],
+        "assumptions": [
+          "Effects are bounded demonstration indices, not operational guidance."
+        ],
+        "expected_outcomes": [
+          "Reducing activity lowers workload.",
+          "Monitoring alone allows a small rise."
+        ]
+      },
+      "initial_measurements": {
+        "heart_rate": 73.78,
+        "oxygen_saturation": 97.87,
+        "sleep_hours": 6.23,
+        "stress_index": 30.73,
+        "fatigue_index": 30.99,
+        "workload_index": 23.91,
+        "radiation_dose_rate": 0.12,
+        "timestamp": "2026-11-16T00:51:59.165036+00:00",
+        "data_type": "simulated"
+      },
+      "selected_actions": [
+        {
+          "action_id": "reduce_activity",
+          "action_name": "Reduce Activity",
+          "description": "Reduce task demand immediately.",
+          "explanation": "Lower demand reduces the illustrative load.",
+          "before": {
+            "heart_rate": 73.78,
+            "oxygen_saturation": 97.87,
+            "sleep_hours": 6.23,
+            "stress_index": 30.73,
+            "fatigue_index": 30.99,
+            "workload_index": 23.91,
+            "radiation_dose_rate": 0.12,
+            "timestamp": "2026-11-16T00:51:59.167365+00:00",
+            "data_type": "simulated"
+          },
+          "after": {
+            "heart_rate": 68.78,
+            "oxygen_saturation": 97.87,
+            "sleep_hours": 6.23,
+            "stress_index": 28.73,
+            "fatigue_index": 30.99,
+            "workload_index": 3.91,
+            "radiation_dose_rate": 0.12,
+            "timestamp": "2026-11-16T00:51:59.167431+00:00",
+            "data_type": "simulated"
+          },
+          "changed": {
+            "workload_index": -20.0,
+            "heart_rate": -5.0,
+            "stress_index": -2.0
+          }
+        }
+      ],
+      "last_consequence": {
+        "action_id": "reduce_activity",
+        "action_name": "Reduce Activity",
+        "description": "Reduce task demand immediately.",
+        "explanation": "Lower demand reduces the illustrative load.",
+        "before": {
+          "heart_rate": 73.78,
+          "oxygen_saturation": 97.87,
+          "sleep_hours": 6.23,
+          "stress_index": 30.73,
+          "fatigue_index": 30.99,
+          "workload_index": 23.91,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.167365+00:00",
+          "data_type": "simulated"
+        },
+        "after": {
+          "heart_rate": 68.78,
+          "oxygen_saturation": 97.87,
+          "sleep_hours": 6.23,
+          "stress_index": 28.73,
+          "fatigue_index": 30.99,
+          "workload_index": 3.91,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.167431+00:00",
+          "data_type": "simulated"
+        },
+        "changed": {
+          "workload_index": -20.0,
+          "heart_rate": -5.0,
+          "stress_index": -2.0
+        }
+      },
+      "messages": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/demo/start",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "active": true,
+      "preset_name": "Mars Crew Health Demonstration",
+      "seed": 7042,
+      "current_step": 0,
+      "total_steps": 8,
+      "step": {
+        "id": "introduction",
+        "title": "Mission introduction",
+        "description": "Meet AstroHealth, Team EAGLES, and the long-duration mission-health monitoring challenge.",
+        "action": "Review the mission context."
+      },
+      "steps": [
+        {
+          "id": "introduction",
+          "title": "Mission introduction",
+          "description": "Meet AstroHealth, Team EAGLES, and the long-duration mission-health monitoring challenge.",
+          "action": "Review the mission context."
+        },
+        {
+          "id": "live_monitoring",
+          "title": "Live health monitoring",
+          "description": "Observe simulated telemetry and how the application presents health indicators.",
+          "action": "Advance one controlled mission hour."
+        },
+        {
+          "id": "digital_twin",
+          "title": "Astronaut Digital Twin",
+          "description": "Open the Digital Twin to view the same authoritative measurements in the 3D crew view.",
+          "action": "Open Digital Twin when ready."
+        },
+        {
+          "id": "mission_scenario",
+          "title": "Mission scenario",
+          "description": "The deterministic preset activates an Elevated Workload scenario over a Mars surface phase.",
+          "action": "Review the active scenario in Mission Command."
+        },
+        {
+          "id": "smart_alert",
+          "title": "Smart alert",
+          "description": "A real configured demonstration rule is triggered by the preset stress indicator; no alert is inserted in the frontend.",
+          "action": "Review the Risk Alerts page."
+        },
+        {
+          "id": "mission_response",
+          "title": "Mission response",
+          "description": "Select a context-specific response action and compare before/after simulated indicators.",
+          "action": "Choose a response in Mission Command."
+        },
+        {
+          "id": "analytics",
+          "title": "AI health analytics",
+          "description": "Review explainable statistical trends, data quality, anomalies, and forecasts when enough observations exist.",
+          "action": "Open AI Health Analytics."
+        },
+        {
+          "id": "report",
+          "title": "Mission report",
+          "description": "Generate a report from the current simulated state and review assumptions and limitations.",
+          "action": "Download a mission report."
+        }
+      ],
+      "mission": {
+        "status": "running",
+        "phase": "mars_surface",
+        "scenario": "elevated_workload",
+        "speed": 1,
+        "seed": 7042,
+        "tick": 3,
+        "elapsed_hours": 3.0,
+        "mission_day": 0.12,
+        "active_stressors": [
+          "High task workload",
+          "Reduced rest between activities"
+        ],
+        "environmental_conditions": [
+          "Habitat operations and illustrative EVA workload",
+          ""
+        ],
+        "health": {
+          "heart_rate": 78.41,
+          "oxygen_saturation": 97.75,
+          "sleep_hours": 7.41,
+          "stress_index": 72.77,
+          "fatigue_index": 19.4,
+          "workload_index": 49.05,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.170146+00:00",
+          "data_type": "simulated"
+        },
+        "alerts": [
+          {
+            "category": "attention",
+            "metric": "Stress index",
+            "value": 72.77,
+            "threshold": 70,
+            "message": "Review the simulated stress trend and recent mission events."
+          }
+        ],
+        "last_updated": "2026-11-16T00:51:59.170146+00:00"
+      },
+      "alert_count": 1,
+      "response_available": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/demo/advance",
+    "body": {
+      "steps": 1
+    },
+    "status": 200,
+    "payload": {
+      "active": true,
+      "preset_name": "Mars Crew Health Demonstration",
+      "seed": 7042,
+      "current_step": 1,
+      "total_steps": 8,
+      "step": {
+        "id": "live_monitoring",
+        "title": "Live health monitoring",
+        "description": "Observe simulated telemetry and how the application presents health indicators.",
+        "action": "Advance one controlled mission hour."
+      },
+      "steps": [
+        {
+          "id": "introduction",
+          "title": "Mission introduction",
+          "description": "Meet AstroHealth, Team EAGLES, and the long-duration mission-health monitoring challenge.",
+          "action": "Review the mission context."
+        },
+        {
+          "id": "live_monitoring",
+          "title": "Live health monitoring",
+          "description": "Observe simulated telemetry and how the application presents health indicators.",
+          "action": "Advance one controlled mission hour."
+        },
+        {
+          "id": "digital_twin",
+          "title": "Astronaut Digital Twin",
+          "description": "Open the Digital Twin to view the same authoritative measurements in the 3D crew view.",
+          "action": "Open Digital Twin when ready."
+        },
+        {
+          "id": "mission_scenario",
+          "title": "Mission scenario",
+          "description": "The deterministic preset activates an Elevated Workload scenario over a Mars surface phase.",
+          "action": "Review the active scenario in Mission Command."
+        },
+        {
+          "id": "smart_alert",
+          "title": "Smart alert",
+          "description": "A real configured demonstration rule is triggered by the preset stress indicator; no alert is inserted in the frontend.",
+          "action": "Review the Risk Alerts page."
+        },
+        {
+          "id": "mission_response",
+          "title": "Mission response",
+          "description": "Select a context-specific response action and compare before/after simulated indicators.",
+          "action": "Choose a response in Mission Command."
+        },
+        {
+          "id": "analytics",
+          "title": "AI health analytics",
+          "description": "Review explainable statistical trends, data quality, anomalies, and forecasts when enough observations exist.",
+          "action": "Open AI Health Analytics."
+        },
+        {
+          "id": "report",
+          "title": "Mission report",
+          "description": "Generate a report from the current simulated state and review assumptions and limitations.",
+          "action": "Download a mission report."
+        }
+      ],
+      "mission": {
+        "status": "running",
+        "phase": "mars_surface",
+        "scenario": "elevated_workload",
+        "speed": 1,
+        "seed": 7042,
+        "tick": 4,
+        "elapsed_hours": 4.0,
+        "mission_day": 0.17,
+        "active_stressors": [
+          "High task workload",
+          "Reduced rest between activities"
+        ],
+        "environmental_conditions": [
+          "Habitat operations and illustrative EVA workload",
+          ""
+        ],
+        "health": {
+          "heart_rate": 81.97,
+          "oxygen_saturation": 97.7,
+          "sleep_hours": 7.38,
+          "stress_index": 72.32,
+          "fatigue_index": 19.26,
+          "workload_index": 53.41,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.172340+00:00",
+          "data_type": "simulated"
+        },
+        "alerts": [
+          {
+            "category": "attention",
+            "metric": "Stress index",
+            "value": 72.32,
+            "threshold": 70,
+            "message": "Review the simulated stress trend and recent mission events."
+          }
+        ],
+        "last_updated": "2026-11-16T00:51:59.172340+00:00"
+      },
+      "alert_count": 1,
+      "response_available": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/demo/exit",
+    "body": null,
+    "status": 200,
+    "payload": {
+      "active": false,
+      "preset_name": "Mars Crew Health Demonstration",
+      "seed": 7042,
+      "current_step": 0,
+      "total_steps": 8,
+      "step": {
+        "id": "introduction",
+        "title": "Mission introduction",
+        "description": "Meet AstroHealth, Team EAGLES, and the long-duration mission-health monitoring challenge.",
+        "action": "Review the mission context."
+      },
+      "steps": [
+        {
+          "id": "introduction",
+          "title": "Mission introduction",
+          "description": "Meet AstroHealth, Team EAGLES, and the long-duration mission-health monitoring challenge.",
+          "action": "Review the mission context."
+        },
+        {
+          "id": "live_monitoring",
+          "title": "Live health monitoring",
+          "description": "Observe simulated telemetry and how the application presents health indicators.",
+          "action": "Advance one controlled mission hour."
+        },
+        {
+          "id": "digital_twin",
+          "title": "Astronaut Digital Twin",
+          "description": "Open the Digital Twin to view the same authoritative measurements in the 3D crew view.",
+          "action": "Open Digital Twin when ready."
+        },
+        {
+          "id": "mission_scenario",
+          "title": "Mission scenario",
+          "description": "The deterministic preset activates an Elevated Workload scenario over a Mars surface phase.",
+          "action": "Review the active scenario in Mission Command."
+        },
+        {
+          "id": "smart_alert",
+          "title": "Smart alert",
+          "description": "A real configured demonstration rule is triggered by the preset stress indicator; no alert is inserted in the frontend.",
+          "action": "Review the Risk Alerts page."
+        },
+        {
+          "id": "mission_response",
+          "title": "Mission response",
+          "description": "Select a context-specific response action and compare before/after simulated indicators.",
+          "action": "Choose a response in Mission Command."
+        },
+        {
+          "id": "analytics",
+          "title": "AI health analytics",
+          "description": "Review explainable statistical trends, data quality, anomalies, and forecasts when enough observations exist.",
+          "action": "Open AI Health Analytics."
+        },
+        {
+          "id": "report",
+          "title": "Mission report",
+          "description": "Generate a report from the current simulated state and review assumptions and limitations.",
+          "action": "Download a mission report."
+        }
+      ],
+      "mission": {
+        "status": "running",
+        "phase": "pre_launch",
+        "scenario": "sleep_disruption",
+        "speed": 1,
+        "seed": 2026,
+        "tick": 13,
+        "elapsed_hours": 13.0,
+        "mission_day": 0.54,
+        "active_stressors": [
+          "Disrupted sleep schedule",
+          "Limited recovery time"
+        ],
+        "environmental_conditions": [
+          "Baseline preparation and systems checkout",
+          ""
+        ],
+        "health": {
+          "heart_rate": 68.78,
+          "oxygen_saturation": 97.87,
+          "sleep_hours": 6.23,
+          "stress_index": 28.73,
+          "fatigue_index": 30.99,
+          "workload_index": 3.91,
+          "radiation_dose_rate": 0.12,
+          "timestamp": "2026-11-16T00:51:59.174459+00:00",
+          "data_type": "simulated"
+        },
+        "alerts": [],
+        "last_updated": "2026-11-16T00:51:59.174459+00:00"
+      },
+      "alert_count": 0,
+      "response_available": false
+    }
+  }
+]

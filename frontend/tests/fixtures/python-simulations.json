@@ -1,0 +1,1892 @@
+[
+  {
+    "seed": 42,
+    "scenario": "nominal",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 22.0,
+      "fatigue_index": 19.21,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "nominal",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 96.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 22.0,
+      "fatigue_index": 19.21,
+      "workload_index": 56.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "nominal",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 22.0,
+      "fatigue_index": 19.21,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "nominal",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 25.72,
+      "fatigue_index": 19.21,
+      "workload_index": 39.72,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "nominal",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 22.0,
+      "fatigue_index": 19.21,
+      "workload_index": 32.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "nominal",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 22.0,
+      "fatigue_index": 19.21,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "nominal",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 25.0,
+      "fatigue_index": 13.99,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "sleep_disruption",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 4.95,
+      "stress_index": 35.5,
+      "fatigue_index": 48.61,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "sleep_disruption",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 96.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 4.95,
+      "stress_index": 35.5,
+      "fatigue_index": 48.61,
+      "workload_index": 56.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "sleep_disruption",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 4.95,
+      "stress_index": 35.5,
+      "fatigue_index": 48.61,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "sleep_disruption",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 4.95,
+      "stress_index": 39.22,
+      "fatigue_index": 48.61,
+      "workload_index": 39.72,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "sleep_disruption",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 4.95,
+      "stress_index": 35.5,
+      "fatigue_index": 48.61,
+      "workload_index": 32.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "sleep_disruption",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 4.95,
+      "stress_index": 35.5,
+      "fatigue_index": 48.61,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "sleep_disruption",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 4.95,
+      "stress_index": 38.5,
+      "fatigue_index": 43.39,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_workload",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 134.24,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 31.0,
+      "fatigue_index": 34.99,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_workload",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 161.24,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 31.0,
+      "fatigue_index": 34.99,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_workload",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 134.24,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 31.0,
+      "fatigue_index": 34.99,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_workload",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 134.24,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 34.72,
+      "fatigue_index": 34.99,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_workload",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 134.24,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 31.0,
+      "fatigue_index": 34.99,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_workload",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 134.24,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 31.0,
+      "fatigue_index": 34.99,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_workload",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 134.24,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 34.0,
+      "fatigue_index": 29.71,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "isolation_stress",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 38.5,
+      "fatigue_index": 29.71,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "isolation_stress",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 96.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 38.5,
+      "fatigue_index": 29.71,
+      "workload_index": 56.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "isolation_stress",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 38.5,
+      "fatigue_index": 29.71,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "isolation_stress",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 42.22,
+      "fatigue_index": 29.71,
+      "workload_index": 39.72,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "isolation_stress",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 38.5,
+      "fatigue_index": 29.71,
+      "workload_index": 32.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "isolation_stress",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 38.5,
+      "fatigue_index": 29.71,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "isolation_stress",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 41.5,
+      "fatigue_index": 24.49,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_radiation",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 25.72,
+      "fatigue_index": 19.21,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.34,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_radiation",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 96.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 25.72,
+      "fatigue_index": 19.21,
+      "workload_index": 56.52,
+      "radiation_dose_rate": 0.34,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_radiation",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 25.72,
+      "fatigue_index": 19.21,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.34,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_radiation",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 29.5,
+      "fatigue_index": 19.21,
+      "workload_index": 39.72,
+      "radiation_dose_rate": 0.34,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_radiation",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 25.72,
+      "fatigue_index": 19.21,
+      "workload_index": 32.52,
+      "radiation_dose_rate": 0.34,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_radiation",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 25.72,
+      "fatigue_index": 19.21,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.34,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "elevated_radiation",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 69.44,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 28.72,
+      "fatigue_index": 13.99,
+      "workload_index": 20.52,
+      "radiation_dose_rate": 0.34,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "eva_activity",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 166.64,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 29.5,
+      "fatigue_index": 40.21,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "eva_activity",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 180.0,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 29.5,
+      "fatigue_index": 40.21,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "eva_activity",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 166.64,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 29.5,
+      "fatigue_index": 40.21,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "eva_activity",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 166.64,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 33.22,
+      "fatigue_index": 40.21,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "eva_activity",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 166.64,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 29.5,
+      "fatigue_index": 40.21,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "eva_activity",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 166.64,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 29.5,
+      "fatigue_index": 40.21,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 42,
+    "scenario": "eva_activity",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 166.64,
+      "oxygen_saturation": 97.31,
+      "sleep_hours": 7.35,
+      "stress_index": 32.5,
+      "fatigue_index": 34.99,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.14,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "nominal",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 26.44,
+      "fatigue_index": 19.54,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "nominal",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 98.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 26.44,
+      "fatigue_index": 19.54,
+      "workload_index": 65.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "nominal",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 26.44,
+      "fatigue_index": 19.54,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "nominal",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 30.15,
+      "fatigue_index": 19.54,
+      "workload_index": 48.63,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "nominal",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 26.44,
+      "fatigue_index": 19.54,
+      "workload_index": 41.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "nominal",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 26.44,
+      "fatigue_index": 19.54,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "nominal",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 29.44,
+      "fatigue_index": 14.25,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "sleep_disruption",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 4.61,
+      "stress_index": 39.94,
+      "fatigue_index": 48.94,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "sleep_disruption",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 98.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 4.61,
+      "stress_index": 39.94,
+      "fatigue_index": 48.94,
+      "workload_index": 65.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "sleep_disruption",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 4.61,
+      "stress_index": 39.94,
+      "fatigue_index": 48.94,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "sleep_disruption",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 4.61,
+      "stress_index": 43.65,
+      "fatigue_index": 48.94,
+      "workload_index": 48.63,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "sleep_disruption",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 4.61,
+      "stress_index": 39.94,
+      "fatigue_index": 48.94,
+      "workload_index": 41.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "sleep_disruption",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 4.61,
+      "stress_index": 39.94,
+      "fatigue_index": 48.94,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "sleep_disruption",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 4.61,
+      "stress_index": 42.94,
+      "fatigue_index": 43.65,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_workload",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 136.08,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 35.44,
+      "fatigue_index": 35.25,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_workload",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 163.08,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 35.44,
+      "fatigue_index": 35.25,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_workload",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 136.08,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 35.44,
+      "fatigue_index": 35.25,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_workload",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 136.08,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 39.15,
+      "fatigue_index": 35.25,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_workload",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 136.08,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 35.44,
+      "fatigue_index": 35.25,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_workload",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 136.08,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 35.44,
+      "fatigue_index": 35.25,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_workload",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 136.08,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 38.44,
+      "fatigue_index": 30.04,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "isolation_stress",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 42.94,
+      "fatigue_index": 30.04,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "isolation_stress",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 98.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 42.94,
+      "fatigue_index": 30.04,
+      "workload_index": 65.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "isolation_stress",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 42.94,
+      "fatigue_index": 30.04,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "isolation_stress",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 46.65,
+      "fatigue_index": 30.04,
+      "workload_index": 48.63,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "isolation_stress",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 42.94,
+      "fatigue_index": 30.04,
+      "workload_index": 41.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "isolation_stress",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 42.94,
+      "fatigue_index": 30.04,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "isolation_stress",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 45.94,
+      "fatigue_index": 24.75,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_radiation",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 30.15,
+      "fatigue_index": 19.54,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.4,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_radiation",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 98.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 30.15,
+      "fatigue_index": 19.54,
+      "workload_index": 65.43,
+      "radiation_dose_rate": 0.4,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_radiation",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 30.15,
+      "fatigue_index": 19.54,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.4,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_radiation",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 33.94,
+      "fatigue_index": 19.54,
+      "workload_index": 48.63,
+      "radiation_dose_rate": 0.4,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_radiation",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 30.15,
+      "fatigue_index": 19.54,
+      "workload_index": 41.43,
+      "radiation_dose_rate": 0.4,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_radiation",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 30.15,
+      "fatigue_index": 19.54,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.4,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "elevated_radiation",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 71.28,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 33.15,
+      "fatigue_index": 14.25,
+      "workload_index": 29.43,
+      "radiation_dose_rate": 0.4,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "eva_activity",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 168.48,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 33.94,
+      "fatigue_index": 40.54,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "eva_activity",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 180.0,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 33.94,
+      "fatigue_index": 40.54,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "eva_activity",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 168.48,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 33.94,
+      "fatigue_index": 40.54,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "eva_activity",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 168.48,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 37.65,
+      "fatigue_index": 40.54,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "eva_activity",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 168.48,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 33.94,
+      "fatigue_index": 40.54,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "eva_activity",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 168.48,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 33.94,
+      "fatigue_index": 40.54,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 2026,
+    "scenario": "eva_activity",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 168.48,
+      "oxygen_saturation": 98.1,
+      "sleep_hours": 7.01,
+      "stress_index": 36.94,
+      "fatigue_index": 35.25,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.16,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "nominal",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 19.29,
+      "fatigue_index": 18.44,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "nominal",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 105.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 19.29,
+      "fatigue_index": 18.44,
+      "workload_index": 59.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "nominal",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 19.29,
+      "fatigue_index": 18.44,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "nominal",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 23.03,
+      "fatigue_index": 18.44,
+      "workload_index": 42.94,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "nominal",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 19.29,
+      "fatigue_index": 18.44,
+      "workload_index": 35.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "nominal",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 19.29,
+      "fatigue_index": 18.44,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "nominal",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 22.29,
+      "fatigue_index": 13.22,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "sleep_disruption",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 5.48,
+      "stress_index": 32.79,
+      "fatigue_index": 47.84,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "sleep_disruption",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 105.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 5.48,
+      "stress_index": 32.79,
+      "fatigue_index": 47.84,
+      "workload_index": 59.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "sleep_disruption",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 5.48,
+      "stress_index": 32.79,
+      "fatigue_index": 47.84,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "sleep_disruption",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 5.48,
+      "stress_index": 36.53,
+      "fatigue_index": 47.84,
+      "workload_index": 42.94,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "sleep_disruption",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 5.48,
+      "stress_index": 32.79,
+      "fatigue_index": 47.84,
+      "workload_index": 35.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "sleep_disruption",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 5.48,
+      "stress_index": 32.79,
+      "fatigue_index": 47.84,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "sleep_disruption",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 5.48,
+      "stress_index": 35.79,
+      "fatigue_index": 42.62,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_workload",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 143.06,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 28.29,
+      "fatigue_index": 34.22,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_workload",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 170.06,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 28.29,
+      "fatigue_index": 34.22,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_workload",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 143.06,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 28.29,
+      "fatigue_index": 34.22,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_workload",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 143.06,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 32.03,
+      "fatigue_index": 34.22,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_workload",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 143.06,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 28.29,
+      "fatigue_index": 34.22,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_workload",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 143.06,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 28.29,
+      "fatigue_index": 34.22,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_workload",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 143.06,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 31.29,
+      "fatigue_index": 28.94,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "isolation_stress",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 35.79,
+      "fatigue_index": 28.94,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "isolation_stress",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 105.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 35.79,
+      "fatigue_index": 28.94,
+      "workload_index": 59.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "isolation_stress",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 35.79,
+      "fatigue_index": 28.94,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "isolation_stress",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 39.53,
+      "fatigue_index": 28.94,
+      "workload_index": 42.94,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "isolation_stress",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 35.79,
+      "fatigue_index": 28.94,
+      "workload_index": 35.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "isolation_stress",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 35.79,
+      "fatigue_index": 28.94,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "isolation_stress",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 38.79,
+      "fatigue_index": 23.72,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_radiation",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 23.03,
+      "fatigue_index": 18.44,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.38,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_radiation",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 105.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 23.03,
+      "fatigue_index": 18.44,
+      "workload_index": 59.74,
+      "radiation_dose_rate": 0.38,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_radiation",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 23.03,
+      "fatigue_index": 18.44,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.38,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_radiation",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 26.79,
+      "fatigue_index": 18.44,
+      "workload_index": 42.94,
+      "radiation_dose_rate": 0.38,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_radiation",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 23.03,
+      "fatigue_index": 18.44,
+      "workload_index": 35.74,
+      "radiation_dose_rate": 0.38,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_radiation",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 23.03,
+      "fatigue_index": 18.44,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.38,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "elevated_radiation",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 78.26,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 26.03,
+      "fatigue_index": 13.22,
+      "workload_index": 23.74,
+      "radiation_dose_rate": 0.38,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "eva_activity",
+    "phase": "pre_launch",
+    "health": {
+      "heart_rate": 175.46,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 26.79,
+      "fatigue_index": 39.44,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "eva_activity",
+    "phase": "launch",
+    "health": {
+      "heart_rate": 180.0,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 26.79,
+      "fatigue_index": 39.44,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "eva_activity",
+    "phase": "deep_space_transit",
+    "health": {
+      "heart_rate": 175.46,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 26.79,
+      "fatigue_index": 39.44,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "eva_activity",
+    "phase": "mars_arrival",
+    "health": {
+      "heart_rate": 175.46,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 30.53,
+      "fatigue_index": 39.44,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "eva_activity",
+    "phase": "mars_surface",
+    "health": {
+      "heart_rate": 175.46,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 26.79,
+      "fatigue_index": 39.44,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "eva_activity",
+    "phase": "return_transit",
+    "health": {
+      "heart_rate": 175.46,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 26.79,
+      "fatigue_index": 39.44,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  },
+  {
+    "seed": 7042,
+    "scenario": "eva_activity",
+    "phase": "earth_return",
+    "health": {
+      "heart_rate": 175.46,
+      "oxygen_saturation": 96.91,
+      "sleep_hours": 7.88,
+      "stress_index": 29.79,
+      "fatigue_index": 34.22,
+      "workload_index": 100.0,
+      "radiation_dose_rate": 0.12,
+      "data_type": "simulated"
+    }
+  }
+]
