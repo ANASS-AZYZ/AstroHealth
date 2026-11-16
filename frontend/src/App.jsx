@@ -2,6 +2,7 @@ import { Activity, CirclePause, CirclePlay, Clock3, HeartPulse, Moon, Radio, Ref
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { HealthCharts } from "./components/HealthCharts";
+import { useMissionClock } from "./hooks/useMissionClock";
 import { useTelemetry } from "./hooks/useTelemetry";
 import AstronautHealth from "./pages/AstronautHealth";
 import LiveMonitoring from "./pages/LiveMonitoring";
@@ -61,6 +62,11 @@ function RouteLoading() {
   return <main className="loading-screen"><div className="loading-mark"><Activity size={26} /></div><p>Loading mission module...</p></main>;
 }
 
+function MissionClock() {
+  useMissionClock();
+  return null;
+}
+
 function App() {
   const [sessionState, setSessionState] = useState("connecting");
 
@@ -73,7 +79,7 @@ function App() {
   if (sessionState === "connecting") return <main className="loading-screen"><p>Connecting to the AstroHealth API...</p></main>;
   if (sessionState === "error") return <main className="loading-screen"><p>Unable to establish an AstroHealth session.</p><button onClick={() => { setSessionState("connecting"); initializeSession().then(() => setSessionState("ready")).catch(() => setSessionState("error")); }}>Retry connection</button></main>;
   return (
-    <Suspense fallback={<RouteLoading />}><Routes>
+    <><MissionClock /><Suspense fallback={<RouteLoading />}><Routes>
       <Route path="/" element={<MissionOverview />} />
       <Route path="/astronaut-health" element={<AstronautHealth />} />
       <Route path="/live-monitoring" element={<LiveMonitoring />} />
@@ -87,7 +93,7 @@ function App() {
       <Route path="/scientific-evidence" element={<ScientificEvidence />} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFound />} />
-    </Routes></Suspense>
+    </Routes></Suspense></>
   );
 }
 

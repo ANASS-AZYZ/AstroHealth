@@ -14,10 +14,10 @@ const definitions = [
 
 const displayName = (value) => value.replaceAll("_", " ");
 
-function buildChartData(history, prediction, anomaly) {
+function buildChartData(history, metric, prediction, anomaly) {
   const observed = history.map((measurement) => ({
     time: new Date(measurement.timestamp).toLocaleTimeString([], { minute: "2-digit", second: "2-digit" }),
-    observed: measurement[prediction.metric],
+    observed: measurement[metric],
     anomaly_value: null,
   }));
   if (anomaly?.status === "anomaly" && observed.length) {
@@ -94,7 +94,7 @@ function HealthAnalytics() {
       <section className="analytics-predictions">{definitions.map((definition) => <PredictionCard key={definition.key} definition={definition} prediction={predictionMap.get(definition.key)} latestValue={latestValues[definition.key]} />)}</section>
 
       <div className="section-heading"><div><p className="eyebrow">OBSERVED + FORECAST</p><h2>Historical trend charts</h2></div><span className="data-badge">DASHED = EXPERIMENTAL FORECAST</span></div>
-      <section className="charts-grid analytics-charts">{definitions.map((definition) => <AnalyticsTrendChart key={definition.key} definition={definition} data={buildChartData(history, predictionMap.get(definition.key), anomalyMap.get(definition.key))} forecastBoundary={history.length ? new Date(history[history.length - 1].timestamp).toLocaleTimeString([], { minute: "2-digit", second: "2-digit" }) : ""} />)}</section>
+      <section className="charts-grid analytics-charts">{definitions.map((definition) => <AnalyticsTrendChart key={definition.key} definition={definition} data={buildChartData(history, definition.key, predictionMap.get(definition.key), anomalyMap.get(definition.key))} forecastBoundary={history.length ? new Date(history[history.length - 1].timestamp).toLocaleTimeString([], { minute: "2-digit", second: "2-digit" }) : ""} />)}</section>
 
       <section className="analytics-lower-grid">
         <article className="analytics-panel"><div className="panel-title"><AlertTriangle size={17} /><h3>Statistical anomalies</h3></div>{summary?.anomalies?.filter((item) => item.status === "anomaly").length ? summary.anomalies.filter((item) => item.status === "anomaly").map((item) => <div className="analytics-list-item" key={item.metric}><strong>{displayName(item.metric)}</strong><span>{item.observed_value} · rolling mean {item.rolling_mean}</span><p>{item.explanation}</p></div>) : <div className="analytics-empty">No statistical anomalies detected in the current window.</div>}</article>

@@ -23,8 +23,8 @@ export function HealthChart({ definition, data, emptyMessage }) {
             <YAxis domain={["auto", "auto"]} tick={{ fill: chartTheme.axis, fontSize: 11 }} tickLine={false} axisLine={false} width={38} />
             <Tooltip contentStyle={{ background: chartTheme.tooltip, border: `1px solid ${chartTheme.tooltipBorder}`, borderRadius: 10 }} labelStyle={{ color: chartTheme.label }} formatter={(value) => [`${value} ${definition.unit}`, definition.label]} />
             {definition.type === "area"
-              ? <Area type="monotone" dataKey={definition.key} stroke={definition.color} fill={`url(#fill-${definition.key})`} strokeWidth={2} dot={false} />
-              : <Line type="monotone" dataKey={definition.key} stroke={definition.color} strokeWidth={2} dot={false} activeDot={{ r: 4 }} />}
+              ? <Area isAnimationActive={false} type="monotone" dataKey={definition.key} stroke={definition.color} fill={`url(#fill-${definition.key})`} strokeWidth={2} dot={data.length === 1 ? { r: 3 } : false} />
+              : <Line isAnimationActive={false} type="monotone" dataKey={definition.key} stroke={definition.color} strokeWidth={2} dot={data.length === 1 ? { r: 3 } : false} activeDot={{ r: 4 }} />}
           </Chart>
         </ResponsiveContainer>
       )}

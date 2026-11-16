@@ -39,9 +39,9 @@ function AnalyticsTrendChart({ definition, data, forecastBoundary }) {
               labelStyle={{ color: chartTheme.label }}
               formatter={(value, name) => [value == null ? "--" : `${value} ${definition.unit}`, name === "forecast" ? "Experimental forecast" : definition.label]}
             />
-            <Line type="monotone" dataKey="observed" stroke={definition.color} strokeWidth={2} dot={false} connectNulls={false} />
-            <Line type="monotone" dataKey="forecast" stroke={definition.color} strokeWidth={2} strokeDasharray="6 4" dot={false} connectNulls={false} />
-            <Scatter dataKey="anomaly_value" fill="#fb7185" line={false} />
+            <Line isAnimationActive={false} type="monotone" dataKey="observed" stroke={definition.color} strokeWidth={2} dot={data.filter((point) => point.observed != null).length === 1 ? { r: 3 } : false} connectNulls={false} />
+            <Line isAnimationActive={false} type="monotone" dataKey="forecast" stroke={definition.color} strokeWidth={2} strokeDasharray="6 4" dot={false} connectNulls={false} />
+            <Scatter isAnimationActive={false} dataKey="anomaly_value" fill="#fb7185" line={false} />
             {forecastBoundary && <ReferenceLine x={forecastBoundary} stroke={chartTheme.axis} strokeDasharray="3 3" label={{ value: "FORECAST", fill: chartTheme.label, fontSize: 9, position: "insideTopRight" }} />}
           </LineChart>
         </ResponsiveContainer>

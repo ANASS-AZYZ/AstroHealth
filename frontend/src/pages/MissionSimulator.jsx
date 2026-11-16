@@ -3,7 +3,7 @@ import { Activity, Clock3, Gauge, Play, RotateCcw, Square, TriangleAlert } from 
 import { HealthCharts } from "../components/HealthCharts";
 import PageFrame from "./PageFrame";
 import {
-  advanceMission, getMissionHistory, getMissionPhases, getMissionScenarios, getMissionState,
+  getMissionHistory, getMissionPhases, getMissionScenarios, getMissionState,
   pauseMission, resetMission, resumeMission, setMissionPhase, setMissionScenario, setMissionSpeed,
   startMission,
 } from "../services/api";
@@ -23,26 +23,28 @@ function MissionSimulator() {
   }, []);
   useEffect(() => { const initial = setTimeout(load, 0); return () => clearTimeout(initial); }, [load]);
 
-  const simulationStatus = state?.status;
-  const simulationSpeed = state?.speed;
+  // The session clock advances independently of the current route.
   useEffect(() => {
-    if (simulationStatus !== "running") return undefined;
+    let active = true;
+    let pending = false;
     const timer = setInterval(async () => {
+      if (pending) return;
+      pending = true;
       try {
-        const next = await advanceMission(simulationSpeed);
-        setState(next);
-        setHistory(await getMissionHistory());
-      } catch { setError("Mission telemetry update failed."); }
+        const [next, nextHistory] = await Promise.all([getMissionState(), getMissionHistory()]);
+        if (active) { setState(next); setHistory(nextHistory); }
+      } catch { if (active) setError("Mission telemetry update failed."); }
+      finally { pending = false; }
     }, 1000);
-    return () => clearInterval(timer);
-  }, [simulationSpeed, simulationStatus]);
+    return () => { active = false; clearInterval(timer); };
+  }, []);
 
   const command = async (action) => {
     try { setState(await action()); setError(""); } catch { setError("Unable to update mission state."); }
   };
   const selectScenario = async (event) => command(() => setMissionScenario(event.target.value));
   const selectSpeed = async (event) => command(() => setMissionSpeed(Number(event.target.value)));
-  const chartData = useMemo(() => history.map((item) => ({ ...item, oxygen_level: item.oxygen_saturation, stress_level: item.stress_index, sleep_hours: item.sleep_hours, radiation: item.radiation_dose_rate, time: `T${item.timestamp ? new Date(item.timestamp).toLocaleTimeString([], { minute: "2-digit", second: "2-digit" }) : "--"}` })), [history]);
+  const chartData = useMemo(() => (history.length ? history : state?.health ? [state.health] : []).map((item) => ({ ...item, oxygen_level: item.oxygen_saturation, stress_level: item.stress_index, sleep_hours: item.sleep_hours, radiation: item.radiation_dose_rate, time: `T${item.timestamp ? new Date(item.timestamp).toLocaleTimeString([], { minute: "2-digit", second: "2-digit" }) : "--"}` })), [history, state]);
   const scenario = scenarios.find((item) => item.id === state?.scenario);
 
   if (!state) return error

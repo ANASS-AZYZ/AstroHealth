@@ -27,31 +27,32 @@ export function useTelemetry({ polling = true } = {}) {
 
   useEffect(() => {
     let active = true;
-    Promise.all([getAstronaut(), getHealthHistory()])
-      .then(([astronautData, historyData]) => {
+    let pending = false;
+    const load = async () => {
+      if (pending) return;
+      pending = true;
+      try {
+        const [astronautData, measurement, historyData] = await Promise.all([
+          getAstronaut(), getLiveHealth(), getHealthHistory(),
+        ]);
         if (!active) return;
-        const measurements = Array.isArray(historyData) ? historyData : [];
         setAstronaut(astronautData);
-        setHistory(measurements);
-        if (measurements.length) setHealth(measurements[measurements.length - 1]);
-        setIsLoading(false);
-      })
-      .catch(() => {
-        if (!active) return;
-        setError("Unable to connect to the AstroHealth API.");
-        setIsLoading(false);
-      });
-    return () => { active = false; };
-  }, []);
+        setHealth(measurement);
+        setHistory(Array.isArray(historyData) ? historyData : []);
+        setError("");
+      } catch {
+        if (active) setError("Unable to connect to the AstroHealth API.");
+      } finally {
+        pending = false;
+        if (active) setIsLoading(false);
+      }
+    };
+    void load();
+    const timer = polling && isRunning ? setInterval(load, POLL_INTERVAL) : null;
+    return () => { active = false; if (timer) clearInterval(timer); };
+  }, [polling, isRunning]);
 
-  useEffect(() => {
-    if (!polling || !isRunning) return undefined;
-    const initialRequest = setTimeout(receiveMeasurement, 0);
-    const timer = setInterval(receiveMeasurement, POLL_INTERVAL);
-    return () => { clearTimeout(initialRequest); clearInterval(timer); };
-  }, [isRunning, polling, receiveMeasurement]);
-
-  const chartData = useMemo(() => history.map((measurement) => ({ ...measurement, time: formatTime(measurement.timestamp) })), [history]);
+  const chartData = useMemo(() => (history.length ? history : health ? [health] : []).map((measurement) => ({ ...measurement, time: formatTime(measurement.timestamp) })), [history, health]);
   const reset = () => { setHistory([]); setHealth(null); setError(""); };
 
   return { health, astronaut, history, chartData, isRunning, setIsRunning, isLoading, error, reset, receiveMeasurement };
